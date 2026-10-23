@@ -1,0 +1,168 @@
+{
+  "id": "05",
+  "title": "Room 0",
+  "theme": "Life in the House & Neighbourhood",
+  "cefr": "B1.1",
+  "next": "06",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["present progressive (What are you doing now? I'm cleaning…)", "simple present vs. now / at the moment", "possessive adjectives: my, your, his, her, our, their"],
+  "vocab_key": ["detached house", "semi-detached house", "terraced house", "block of flats", "cottage", "bungalow", "penthouse", "kitchen", "sitting room", "dining room", "bedroom", "bathroom", "utility room", "garage", "garden", "hall", "sofa", "wardrobe", "fridge", "spacious", "stylish", "tidy up", "iron", "wash the dishes", "have a shower"],
+  "social": ["Home sweet home!", "Make yourself at home!", "What a nice house!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "plan_table", "vars": { "room0": false, "pins": false }, "ms": 3400, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "plan_table", "vars": { "room0": true }, "ms": 3800, "signal": 0.3, "static": 0.5 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 5 · Room 0", "ms": 3400 },
+
+    { "type": "bg", "preset": "plan_table", "vars": { "room0": false } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "yasemin", "text": "The old plan. Our dorm house.", "tr": "Eski plan. Yurt evimiz.", "expr": "think" },
+    { "type": "say", "who": "leo", "text": "Nine rooms on paper. Eight inside.", "tr": "Kâğıtta dokuz oda. İçeride sekiz.", "expr": "worried" },
+    { "type": "say", "who": "omar", "text": "Home sweet home! Let's count.", "tr": "Evim güzel evim! Sayalım.", "expr": "smile" },
+    { "type": "say", "who": "yasemin", "text": "Name the rooms. Find them.", "tr": "Odaları adlandır. Bul.", "expr": "smile" },
+    { "type": "floorplan", "who": "yasemin", "cols": 6, "rowsN": 4,
+      "rooms": [
+        { "id": "sitting", "label": "sitting room", "icon": "🛋️", "area": "1 / 1 / 3 / 3" },
+        { "id": "hall", "label": "hall", "icon": "🚪", "area": "1 / 3 / 2 / 4" },
+        { "id": "kitchen", "label": "kitchen", "icon": "🍳", "area": "1 / 4 / 2 / 7" },
+        { "id": "dining", "label": "dining room", "icon": "🍽️", "area": "2 / 4 / 3 / 7" },
+        { "id": "bedroom", "label": "bedroom", "icon": "🛏️", "area": "3 / 1 / 5 / 3" },
+        { "id": "bathroom", "label": "bathroom", "icon": "🛁", "area": "3 / 3 / 4 / 4" },
+        { "id": "utility", "label": "utility room", "icon": "🧺", "area": "4 / 3 / 5 / 4" },
+        { "id": "garage", "label": "garage", "icon": "🚗", "area": "3 / 4 / 5 / 6" },
+        { "id": "garden", "label": "garden", "icon": "🌳", "area": "3 / 6 / 5 / 7" }
+      ],
+      "rounds": [
+        { "text": "We cook here. The oven, the fridge.", "target": "kitchen" },
+        { "text": "The sofa. We watch TV here.", "target": "sitting" },
+        { "text": "We have dinner here. Big table.", "target": "dining" },
+        { "text": "Mei is sleeping here now.", "target": "bedroom" },
+        { "text": "Omar is having a shower now.", "target": "bathroom" },
+        { "text": "Leo is ironing at the moment.", "target": "utility" },
+        { "text": "Their car is here.", "target": "garage" },
+        { "text": "Trees and flowers. Outside.", "target": "garden" },
+        { "text": "The front door. Make yourself at home!", "target": "hall" }
+      ] },
+    { "type": "say", "who": "mei", "text": "Nine rooms. All here.", "tr": "Dokuz oda. Hepsi burada.", "expr": "think" },
+    { "type": "say", "who": "yasemin", "text": "No. The plan has ten. Room 0.", "tr": "Hayır. Planda on var. Oda 0.", "expr": "worried" },
+
+    { "type": "bg", "preset": "street" },
+    { "type": "say", "who": "omar", "text": "Our neighbourhood. Old houses. Look.", "tr": "Mahallemiz. Eski evler. Bak.", "expr": "smile" },
+    { "type": "say", "who": "leo", "text": "Cottage, terraced, flats. What a street!", "tr": "Kır evi, bitişik evler, apartman. Ne sokak!", "expr": "smile" },
+    { "type": "match", "title": "What type of house is it?", "who": "leo", "pairs": [
+      { "a": "🏡 cottage", "b": "small, old, in the country" },
+      { "a": "🏘️ terraced house", "b": "a row of joined houses" },
+      { "a": "🏢 block of flats", "b": "many flats, one building" },
+      { "a": "🌆 penthouse", "b": "a flat on the top floor" },
+      { "a": "🏠 detached house", "b": "one house, no shared wall" },
+      { "a": "🏚️ bungalow", "b": "one floor, no upstairs" }
+    ] },
+    { "type": "say", "who": "mei", "text": "Old Mill Cottage. A poster. Read it.", "tr": "Old Mill Cottage. Bir afiş. Oku.", "expr": "smile" },
+    { "type": "note", "title": "FOR SALE · Old Mill Cottage",
+      "text": "A cottage from 1896. Downstairs: a spacious kitchen and a sitting room with a fireplace. Upstairs: two bedrooms and a bathroom. A small garden with old trees. Stylish and harmonious. There is no garage. Price on request.",
+      "question": { "who": "omar", "text": "It has a big garage, right?", "tr": "Büyük bir garajı var, değil mi?", "expr": "wink", "options": [
+        { "text": "No. It has a garden.", "tr": "Hayır. Bahçesi var." },
+        { "text": "Yes. A big garage.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Read again. No garage.", "tr": "Tekrar oku. Garaj yok.", "expr": "think" } },
+        { "text": "It has a penthouse.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "A cottage? No.", "tr": "Kır evi mi? Hayır.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "1896. Our school is from 1896.", "tr": "1896. Okulumuz 1896'dan.", "expr": "surprised" },
+
+    { "type": "bg", "preset": "common" },
+    { "type": "say", "who": "leo", "text": "What's everyone doing now?", "tr": "Herkes şu an ne yapıyor?" },
+    { "type": "say", "who": "omar", "text": "Mei is drawing. Leo is tidying up.", "tr": "Mei çiziyor. Leo toparlıyor.", "expr": "wink" },
+    { "type": "say", "who": "yasemin", "text": "Now, or every day? Sort them.", "tr": "Şimdi mi, her gün mü? Ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "now", "label": "now · at the moment" }, { "id": "every", "label": "every day" }],
+      "cards": [
+        { "text": "Mei is drawing now.", "g": "now" }, { "text": "Leo is tidying up at the moment.", "g": "now" }, { "text": "We're having dinner now.", "g": "now" }, { "text": "She's ironing at present.", "g": "now" },
+        { "text": "Leo tidies up every day.", "g": "every" }, { "text": "We have dinner at seven.", "g": "every" }, { "text": "Mei draws every day.", "g": "every" }, { "text": "Omar washes the dishes on Mondays.", "g": "every" }
+      ],
+      "speed": [
+        { "text": "Leo ___ tidying up now.", "opts": ["is", "does", "are"], "a": "is" },
+        { "text": "We ___ dinner every day.", "opts": ["have", "are having", "having"], "a": "have" },
+        { "text": "What ___ you doing now?", "opts": ["are", "do", "is"], "a": "are" },
+        { "text": "Mei ___ in her room now.", "opts": ["is reading", "reads", "read"], "a": "is reading" },
+        { "text": "Omar is in ___ room.", "opts": ["his", "her", "their"], "a": "his" },
+        { "text": "This is ___ house. We live here.", "opts": ["our", "their", "your"], "a": "our" }
+      ] },
+
+    { "type": "bg", "preset": "common", "signal": 0.4, "static": 0.5 },
+    { "type": "say", "who": "echo", "text": "…room… zero… now…", "tr": "…oda… sıfır… şimdi…" },
+    { "type": "broken_message", "text": "Where [are] you? I'm [waiting] in Room 0. [Our] room.",
+      "options": { "are": ["are", "is", "am"], "waiting": ["waiting", "wait", "waits"], "Our": ["Our", "My", "Their"] },
+      "hints": { "are": "👥", "is": "👤", "am": "🙋", "waiting": "⏳", "wait": "✋", "waits": "👤", "Our": "🤝", "My": "🙋", "Their": "👥" } },
+    { "type": "choice", "who": "echo", "text": "What are you doing now?", "tr": "Şu an ne yapıyorsun?", "options": [
+      { "text": "I'm looking for Room 0.", "tr": "Oda 0'ı arıyorum." },
+      { "text": "I look for Room 0 now.", "tr": "", "ok": false, "reply": { "text": "…I'm looking…", "tr": "…I'm looking…" } },
+      { "text": "I'm look for Room 0.", "tr": "", "ok": false, "reply": { "text": "…looking… -ing…", "tr": "…looking… -ing…" } }
+    ] },
+
+    { "type": "bg", "preset": "plan_table", "vars": { "room0": false }, "signal": 0.3, "static": 0.3 },
+    { "type": "say", "who": "mei", "text": "The plan. Look again.", "tr": "Plan. Tekrar bak.", "expr": "think" },
+    { "type": "floorplan", "mode": "reveal", "ms": 1800, "hold": 2800, "cols": 6, "rowsN": 4,
+      "rooms": [
+        { "id": "sitting", "label": "sitting room", "icon": "🛋️", "area": "1 / 1 / 3 / 3" },
+        { "id": "hall", "label": "hall", "icon": "🚪", "area": "1 / 3 / 2 / 4" },
+        { "id": "kitchen", "label": "kitchen", "icon": "🍳", "area": "1 / 4 / 2 / 7" },
+        { "id": "dining", "label": "dining room", "icon": "🍽️", "area": "2 / 4 / 3 / 7" },
+        { "id": "bedroom", "label": "bedroom", "icon": "🛏️", "area": "3 / 1 / 5 / 3" },
+        { "id": "bathroom", "label": "bathroom", "icon": "🛁", "area": "3 / 3 / 4 / 4" },
+        { "id": "utility", "label": "utility room", "icon": "🧺", "area": "4 / 3 / 5 / 4" },
+        { "id": "garage", "label": "garage", "icon": "🚗", "area": "3 / 4 / 5 / 6" },
+        { "id": "garden", "label": "garden", "icon": "🌳", "area": "3 / 6 / 5 / 7" }
+      ],
+      "extra": { "label": "ROOM 0", "icon": "📻", "area": "2 / 3 / 3 / 4" } },
+    { "type": "say", "who": "yasemin", "text": "There. Behind the hall. No door.", "tr": "Orada. Holün arkasında. Kapı yok.", "expr": "excited" },
+
+    { "type": "bg", "preset": "rooftop_door", "rain": 0, "signal": 0 },
+    { "type": "say", "who": "leo", "text": "A wall. But… a lock. Listen.", "tr": "Bir duvar. Ama… bir kilit. Dinle.", "expr": "surprised" },
+    { "type": "voice_lock", "phrase": "Make yourself at home.", "tries": 3, "threshold": 0.6 },
+    { "type": "bg", "preset": "hidden_room", "vars": { "pins": false }, "signal": 0 },
+    { "type": "say", "who": "omar", "text": "What a nice… room? Dusty.", "tr": "Ne güzel bir… oda? Tozlu.", "expr": "think" },
+    { "type": "say", "who": "leo", "text": "A map. Our city. Red marks.", "tr": "Bir harita. Şehrimiz. Kırmızı işaretler.", "expr": "worried" },
+    { "type": "say", "who": "yasemin", "text": "First, record. Our homes. For the signal.", "tr": "Önce kayıt. Evlerimiz. Sinyal için.", "expr": "smile" },
+    { "type": "interview", "title": "Home Sweet Home · Episode 5", "file": "home", "questions": [
+      { "q": "Where do you live?", "who": "leo", "a": "In a block of flats. Fifth floor.", "you": "And you? Where do you live?" },
+      { "q": "What's your favourite room?", "who": "mei", "a": "My bedroom. I draw there.", "you": "And you? Your favourite room?" },
+      { "q": "What do you do at home?", "who": "omar", "a": "I relax. I never tidy up!", "you": "And you? What do you do at home?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Home sweet home!", "tr": "Evim güzel evim!", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 5.", "tr": "Kaptan günlüğü. Beşinci gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Day 5", "hints": ["🏠", "🛏️", "🗺️"], "min": 2, "placeholder": "I live in a … My favourite room is …",
+      "feedback": [
+        { "contains": ["live"], "who": "yasemin", "text": "Your home. Nice. I can see it.", "tr": "Evin. Güzel. Gözümde canlandı.", "expr": "excited" },
+        { "contains": ["room"], "who": "yasemin", "text": "Good. Where do you live?", "tr": "Güzel. Nerede yaşıyorsun?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: I live in a… My room is…", "tr": "Dene: I live in a… My room is…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "hidden_room", "vars": { "pins": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1200 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "City map · five marks", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["Mark 1: Night Market, Pier 7", "Mark 2: Old Mill Cottage, 1896", "Mark 3: Northgate, Room 0", "Friday, 20:00. Come, {name}."] },
+    { "type": "bg", "preset": "hidden_room", "signal": 0.95, "static": 0.9 },
+    { "type": "say", "who": "echo", "text": "Friday. The market. Come, {name}.", "tr": "Cuma. Pazar. Gel, {name}." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Night Market", "ms": 5000 }
+  ]
+}

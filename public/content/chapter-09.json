@@ -1,0 +1,169 @@
+{
+  "id": "09",
+  "season": 2,
+  "title": "Rise and Shine",
+  "theme": "School Life & Education",
+  "cefr": "B1.2",
+  "next": "10",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["simple present vs. present progressive", "question tags", "something / anything / nothing", "must / can't for deduction", "object pronouns"],
+  "vocab_key": ["boarding school", "private school", "nursery", "primary school", "upper secondary school", "canteen", "locker room", "staffroom", "courtyard", "tennis court", "prayer room", "chess club", "coding club", "volunteering club", "spelling bee", "quiz", "presentation", "anxiety", "anxious", "time management", "to graduate", "to succeed"],
+  "social": ["Rise and shine for school, dear!", "Don't be in a rush at school!", "Don't skive off too often!", "Let's catch up during lunch time!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "dorm_morning", "vars": { "clock": "06:59", "alarm": false }, "ms": 3200, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "dorm_morning", "vars": { "clock": "07:00", "alarm": true }, "sfx": "alarm", "ms": 2600 },
+      { "preset": "corridor", "vars": { "alarm": false }, "ms": 2800 },
+      { "preset": "attic_sky", "vars": { "radio": true, "beam": false }, "ms": 3800, "signal": 0.4, "static": 0.6 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 1 · Rise and Shine", "ms": 3600 },
+
+    { "type": "bg", "preset": "corridor" },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "omar", "text": "Rise and shine, dear! Year 10!", "tr": "Kalk bakalım! 10. sınıf!", "expr": "excited" },
+    { "type": "say", "who": "leo", "text": "Don't be in a rush. The quiz…", "tr": "Acele etme. Sınav…", "expr": "worried" },
+    { "type": "say", "who": "yasemin", "text": "The radio. New voices. All night.", "tr": "Radyo. Yeni sesler. Bütün gece.", "expr": "think" },
+    { "type": "say", "who": "mei", "text": "Three signals. Three schools. Far away.", "tr": "Üç sinyal. Üç okul. Çok uzakta.", "expr": "surprised" },
+    { "type": "bg", "preset": "corridor", "signal": 0.3, "static": 0.4 },
+    { "type": "say", "who": "echo", "text": "…boarding school… snow… find us…", "tr": "…yatılı okul… kar… bizi bul…" },
+    { "type": "broken_message", "text": "You must [be] Northgate. We are [sleeping] at school. It's a [boarding] school.",
+      "options": { "be": ["be", "are", "is"], "sleeping": ["sleeping", "sleep", "sleeps"], "boarding": ["boarding", "private", "primary"] },
+      "hints": { "be": "🟰", "are": "👥", "is": "👤", "sleeping": "😴", "sleep": "🛏️", "sleeps": "👤", "boarding": "🏫", "private": "💰", "primary": "🧒" } },
+    { "type": "choice", "who": "echo", "text": "You're new here, aren't you?", "tr": "Buraya yenisiniz, değil mi?", "options": [
+      { "text": "No, we aren't. We're in Year 10.", "tr": "Hayır. Biz 10. sınıftayız." },
+      { "text": "No, we are.", "tr": "", "ok": false, "reply": { "text": "…no… we aren't…", "tr": "…no… we aren't…" } },
+      { "text": "Yes, we don't.", "tr": "", "ok": false, "reply": { "text": "…aren't… or are…", "tr": "…aren't… ya da are…" } }
+    ] },
+    { "type": "bg", "preset": "corridor", "signal": 0, "static": 0 },
+
+    { "type": "say", "who": "yasemin", "text": "A boarding school. Like ours. Where?", "tr": "Bir yatılı okul. Bizimki gibi. Nerede?", "expr": "think" },
+    { "type": "say", "who": "leo", "text": "School types. Let's sort them first.", "tr": "Okul türleri. Önce onları ayıralım.", "expr": "think" },
+    { "type": "match", "title": "Types of school", "who": "leo", "pairs": [
+      { "a": "🏫 boarding school", "b": "students sleep at school" },
+      { "a": "💰 private school", "b": "families pay fees" },
+      { "a": "🧸 nursery", "b": "children aged 3 to 5" },
+      { "a": "✏️ primary school", "b": "ages 6 to 10" },
+      { "a": "🎓 upper secondary school", "b": "ages 14 to 18, a diploma" },
+      { "a": "🌍 international school", "b": "students from many countries" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Northgate is boarding AND international!", "tr": "Northgate hem yatılı hem uluslararası!", "expr": "smile" },
+
+    { "type": "bg", "preset": "common" },
+    { "type": "say", "who": "mei", "text": "The new brochure. Read it, {name}.", "tr": "Yeni broşür. Oku, {name}.", "expr": "smile" },
+    { "type": "note", "title": "NORTHGATE · Year 10 brochure",
+      "text": "Welcome back! Facilities: canteen (07:00 to 19:00), library, tennis court, prayer room, locker rooms and a courtyard. Clubs meet on Wednesdays after school: chess, coding, art, volunteering and spelling bee. The counsellor's office is open every day. Don't be in a rush!",
+      "question": { "who": "omar", "text": "Clubs meet on Mondays, don't they?", "tr": "Kulüpler pazartesi toplanıyor, değil mi?", "expr": "wink", "options": [
+        { "text": "No, they don't. On Wednesdays.", "tr": "Hayır. Çarşamba günleri." },
+        { "text": "Yes, they do. Mondays.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Read it again. Wednesdays.", "tr": "Tekrar oku. Çarşamba.", "expr": "think" } },
+        { "text": "Every day.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "That's the counsellor's office.", "tr": "O rehberlik ofisi.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "Wednesday. The clubs fair. Clues there.", "tr": "Çarşamba. Kulüp fuarı. İpuçları orada.", "expr": "excited" },
+
+    { "type": "bg", "preset": "common", "vars": {} },
+    { "type": "say", "who": "staff", "text": "Clubs fair! Pick a club, anyone?", "tr": "Kulüp fuarı! Bir kulüp seçen var mı?", "expr": "smile" },
+    { "type": "stalls", "who": "staff", "hint": "tap a club", "stalls": [
+      { "id": "chess", "icon": "♟️", "name": "Club 1", "dish": "chess club", "line": "Chess club. We play every Wednesday.", "q": "Chess club meets every week, doesn't it?", "clue": "Snow all winter.", "options": [
+        { "text": "Yes, it does. Every Wednesday.", "reply": { "text": "Right! Here's your clue." } },
+        { "text": "Yes, it doesn't.", "ok": false, "reply": { "text": "Yes, it does. Or no, it doesn't." } },
+        { "text": "It is playing now.", "ok": false, "reply": { "text": "Every week. Not now." } }
+      ] },
+      { "id": "coding", "icon": "💻", "name": "Club 2", "dish": "coding club", "line": "Coding club. We're building a robot now.", "q": "What are you doing right now?", "clue": "A rugby field.", "options": [
+        { "text": "You're building a robot now.", "reply": { "text": "Exactly! Take this clue." } },
+        { "text": "You build a robot every day.", "ok": false, "reply": { "text": "Right now! Not every day." } },
+        { "text": "You is building.", "ok": false, "reply": { "text": "You ARE building. Again?" } }
+      ] },
+      { "id": "volunteer", "icon": "🤝", "name": "Club 3", "dish": "volunteering club", "line": "Volunteering club. Is there anything you need?", "q": "Is there anything in the locker room?", "clue": "Canteen at seven.", "options": [
+        { "text": "No, there's nothing. It's empty.", "reply": { "text": "Nothing! Clean. A clue for you." } },
+        { "text": "No, there's anything.", "ok": false, "reply": { "text": "There's NOTHING. Or isn't anything." } },
+        { "text": "Yes, nothing.", "ok": false, "reply": { "text": "Yes, something. Or no, nothing." } }
+      ] },
+      { "id": "spelling", "icon": "🔤", "name": "Club 4", "dish": "spelling bee", "line": "Spelling bee! Leo must be nervous.", "q": "Leo isn't here. Where must he be?", "clue": "Student: Anya.", "options": [
+        { "text": "He must be in the library. Studying.", "reply": { "text": "Must be! His bag is there." } },
+        { "text": "He can't be in the library.", "ok": false, "reply": { "text": "His bag is there. He MUST be." } },
+        { "text": "He must is in the library.", "ok": false, "reply": { "text": "He must BE. Again?" } }
+      ] }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Snow. Rugby. Canteen at seven. Anya.", "tr": "Kar. Ragbi. Kantin yedide. Anya.", "expr": "think" },
+
+    { "type": "bg", "preset": "library" },
+    { "type": "say", "who": "leo", "text": "The quiz. I can't. I'm anxious.", "tr": "Sınav. Yapamam. Kaygılıyım.", "expr": "worried" },
+    { "type": "choice", "who": "leo", "text": "What do I do, {name}?", "tr": "Ne yapayım, {name}?", "expr": "worried", "options": [
+      { "text": "Keep calm. Time management. Let's plan.", "tr": "Sakin ol. Zaman yönetimi. Plan yapalım.", "reply": { "who": "leo", "text": "A plan. Okay. Thanks, {name}.", "tr": "Bir plan. Tamam. Sağ ol, {name}.", "expr": "smile" } },
+      { "text": "Skive off! Stay in bed.", "tr": "", "ok": false, "reply": { "who": "yasemin", "text": "Don't skive off too often!", "tr": "Çok sık asma!", "expr": "worried" } },
+      { "text": "It's nothing. Relax.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "It's something. Listen to him.", "tr": "Bir şey var. Onu dinle.", "expr": "think" } }
+    ] },
+    { "type": "say", "who": "mei", "text": "Sure, or not sure? Must, or can't?", "tr": "Emin mi, değil mi? Must mı, can't mi?", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "must", "label": "must · sure it's true" }, { "id": "cant", "label": "can't · sure it's false" }],
+      "cards": [
+        { "text": "Her bag is here. She must be close.", "g": "must" }, { "text": "Lights on. Someone must be inside.", "g": "must" }, { "text": "Snow all winter. It must be far north.", "g": "must" }, { "text": "He's smiling. He must be happy.", "g": "must" },
+        { "text": "He can't be at school. He's in Brazil.", "g": "cant" }, { "text": "The canteen can't be open. It's 22:00.", "g": "cant" }, { "text": "She can't be new. She knows everyone.", "g": "cant" }, { "text": "It can't be Leo. Leo is here.", "g": "cant" }
+      ],
+      "speed": [
+        { "text": "The lights are on. Someone ___ be inside.", "opts": ["must", "can't", "isn't"], "a": "must" },
+        { "text": "He ___ be at the canteen. It's closed.", "opts": ["can't", "must", "is"], "a": "can't" },
+        { "text": "Is there ___ in the locker?", "opts": ["anything", "nothing", "something"], "a": "anything" },
+        { "text": "There's ___ here. It's empty.", "opts": ["nothing", "anything", "everything"], "a": "nothing" },
+        { "text": "The counsellor spoke to ___ about stress.", "opts": ["them", "they", "their"], "a": "them" },
+        { "text": "Leo always arrives on time, ___ he?", "opts": ["doesn't", "isn't", "does"], "a": "doesn't" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "The signals use tags. Listen. Complete.", "tr": "Sinyaller soru kuyruğu kullanıyor. Dinle. Tamamla.", "expr": "think" },
+    { "type": "tags", "title": "Question tags", "who": "echo", "items": [
+      { "text": "You're new here, ___?", "opts": ["aren't you", "are you", "don't you"], "a": "aren't you" },
+      { "text": "It's a boarding school, ___?", "opts": ["isn't it", "is it", "doesn't it"], "a": "isn't it" },
+      { "text": "They don't have a canteen, ___?", "opts": ["do they", "don't they", "are they"], "a": "do they" },
+      { "text": "Anya plays rugby after school, ___?", "opts": ["doesn't she", "does she", "isn't she"], "a": "doesn't she" },
+      { "text": "The students are sleeping now, ___?", "opts": ["aren't they", "are they", "don't they"], "a": "aren't they" },
+      { "text": "Leo can't skive off, ___?", "opts": ["can he", "can't he", "does he"], "a": "can he" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Let's catch up during lunch time!", "tr": "Öğle arasında buluşalım!", "expr": "smile" },
+
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": false }, "signal": 0.2 },
+    { "type": "say", "who": "yasemin", "text": "The transmitter. Say it with intonation.", "tr": "Verici. Tonlamayla söyle.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "You're new here, aren't you?", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "omar", "text": "Open! Record our school for them.", "tr": "Açıldı! Okulumuzu onlar için kaydet.", "expr": "excited" },
+    { "type": "interview", "title": "School Life · Season 2", "file": "school", "questions": [
+      { "q": "What type of school is Northgate?", "who": "leo", "a": "A boarding school. International. We sleep here.", "you": "And your school? What type is it?" },
+      { "q": "Which club are you in?", "who": "mei", "a": "The art club. On Wednesdays.", "you": "And you? Which club are you in?" },
+      { "q": "How do you manage stress?", "who": "omar", "a": "I don't! Just kidding. Time management.", "you": "And you? How do you manage stress?" }
+    ] },
+    { "type": "say", "who": "leo", "text": "Great take. I'm not anxious now.", "tr": "Harika çekim. Artık kaygılı değilim.", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Season 2. Day 1.", "tr": "Kaptan günlüğü. 2. sezon. Birinci gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Season 2 · Day 1", "hints": ["🏫", "♟️", "📻"], "min": 2, "placeholder": "Northgate is a … school. I'm in the … club. The signal …",
+      "feedback": [
+        { "contains": ["club"], "who": "yasemin", "text": "A club. Good. See you on Wednesday!", "tr": "Bir kulüp. Güzel. Çarşamba görüşürüz!", "expr": "excited" },
+        { "contains": ["school"], "who": "yasemin", "text": "Good. Which club are you in?", "tr": "Güzel. Hangi kulüptesin?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: Northgate is a… I'm in the…", "tr": "Dene: Northgate is a… I'm in the…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "snow_school", "vars": { "signal": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "SIGNAL 1 · Russian · 104.5 FM", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["A boarding school. Snow all winter.", "Rugby field. Canteen at seven.", "Student: Anya, Year 10.", "Northgate must be first. Find us, {name}."] },
+    { "type": "bg", "preset": "snow_school", "vars": { "signal": true }, "signal": 0.95, "static": 0.8 },
+    { "type": "say", "who": "echo", "text": "Anya is waiting. She isn't alone, is she?", "tr": "Anya bekliyor. Yalnız değil, değil mi?" },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Mind Map", "ms": 5000 }
+  ]
+}

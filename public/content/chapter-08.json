@@ -1,0 +1,132 @@
+{
+  "id": "08",
+  "title": "Reply",
+  "theme": "Life in the Universe & Future",
+  "cefr": "B1.1",
+  "next": "09",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "W6", "P1", "V1", "G1"],
+  "grammar": ["simple future: will (predictions, beliefs, promises)", "revision: was/were vs. will"],
+  "vocab_key": ["film", "genre", "comedy", "horror", "science fiction", "documentary", "time travel", "detective film", "adventure", "robot", "virtual reality", "invention", "discovery", "explore", "invent", "futuristic", "artificial", "intelligent", "epic"],
+  "social": ["This film is a breath of fresh air!", "This is not my cup of tea!", "I'm not brave enough to watch this!", "What's next?"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "attic_sky", "vars": { "radio": false, "beam": false }, "ms": 3600, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "attic_sky", "vars": { "radio": true }, "sfx": "burst", "ms": 3400, "signal": 0.3, "static": 0.3 },
+      { "preset": "attic_sky", "vars": { "radio": true, "beam": true }, "ms": 3400, "signal": 0.7, "static": 0.1 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 8 · Reply", "ms": 3400 },
+
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": false }, "signal": 0.2 },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "yasemin", "text": "Clear sky. The radio turned on alone.", "tr": "Açık gökyüzü. Radyo kendi kendine açıldı.", "expr": "surprised" },
+    { "type": "say", "who": "echo", "text": "Hello, {name}. No static tonight.", "tr": "Merhaba, {name}. Bu gece parazit yok." },
+    { "type": "say", "who": "leo", "text": "Who are you? Where are you?", "tr": "Kimsin? Neredesin?", "expr": "worried" },
+    { "type": "say", "who": "echo", "text": "Northgate. This attic. Year 2056.", "tr": "Northgate. Bu çatı katı. 2056 yılı." },
+    { "type": "say", "who": "omar", "text": "2056? Is this science fiction?", "tr": "2056 mı? Bu bilim kurgu mu?", "expr": "surprised" },
+    { "type": "say", "who": "echo", "text": "Students built me. A school project.", "tr": "Beni öğrenciler yaptı. Bir okul projesi." },
+    { "type": "say", "who": "mei", "text": "Time travel. Not my cup of tea.", "tr": "Zaman yolculuğu. Benim tarzım değil.", "expr": "think" },
+    { "type": "bg", "preset": "attic_sky", "signal": 0.4, "static": 0.3 },
+    { "type": "broken_message", "text": "I [will] send this from 2056. You [will] build me. [What's] next?",
+      "options": { "will": ["will", "was", "am"], "What's": ["What's", "Who's", "Where's"] },
+      "hints": { "will": "🔮", "was": "⏮️", "am": "🙋", "What's": "❓", "Who's": "👤", "Where's": "🗺️" } },
+    { "type": "choice", "who": "echo", "text": "What will happen next?", "tr": "Sırada ne olacak?", "options": [
+      { "text": "We will reply. We will help.", "tr": "Cevap vereceğiz. Yardım edeceğiz." },
+      { "text": "We reply tomorrow.", "tr": "", "ok": false, "reply": { "text": "…will… we will…", "tr": "…will… we will…" } },
+      { "text": "We will replied.", "tr": "", "ok": false, "reply": { "text": "…will reply…", "tr": "…will reply…" } }
+    ] },
+    { "type": "bg", "preset": "attic_sky", "signal": 0.15, "static": 0 },
+    { "type": "say", "who": "echo", "text": "Read the project file. Then reply.", "tr": "Proje dosyasını oku. Sonra cevap ver." },
+    { "type": "note", "title": "PROJECT ECHO · Northgate, 2056",
+      "text": "We are students at Northgate. We built Echo, an AI radio. It sends signals to the past: to 1996 and to 2026. Why? The forests, the sea, the school. It's not too late. Please reply. Then we will know: it worked.",
+      "question": { "who": "omar", "text": "Echo is from 1996, right?", "tr": "Echo 1996'dan, değil mi?", "expr": "wink", "options": [
+        { "text": "No. From 2056. The future.", "tr": "Hayır. 2056'dan. Gelecekten." },
+        { "text": "Yes. From 1996.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "1996 was the logbook.", "tr": "1996 kayıt defteriydi.", "expr": "think" } },
+        { "text": "From Mars.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Northgate. This attic.", "tr": "Northgate. Bu çatı katı.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "The future. Same school. Same attic.", "tr": "Gelecek. Aynı okul. Aynı çatı katı.", "expr": "think" },
+
+    { "type": "bg", "preset": "future_attic", "vars": { "radio": true }, "signal": 0.3 },
+    { "type": "say", "who": "echo", "text": "Look. My attic. In 2056.", "tr": "Bak. Benim çatı katım. 2056'da." },
+    { "type": "say", "who": "omar", "text": "Holograms! This is a breath of fresh air!", "tr": "Hologramlar! Bu nefes gibi geldi!", "expr": "excited" },
+    { "type": "say", "who": "leo", "text": "Which film is this? Which genre?", "tr": "Bu hangi film? Hangi tür?", "expr": "smile" },
+    { "type": "match", "title": "Film genres", "who": "leo", "pairs": [
+      { "a": "🚀 science fiction", "b": "robots, space, the future" },
+      { "a": "😂 comedy", "b": "it makes you laugh" },
+      { "a": "👻 horror", "b": "scary and dark" },
+      { "a": "🎥 documentary", "b": "real life, real facts" },
+      { "a": "⏳ time travel", "b": "past and future meet" },
+      { "a": "🔍 detective film", "b": "a mystery to solve" }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Past, or future? Was, or will? Sort.", "tr": "Geçmiş mi, gelecek mi? Was mı, will mi? Ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "will", "label": "the future · will" }, { "id": "was", "label": "the past · was / were" }],
+      "cards": [
+        { "text": "Robots will help people.", "g": "will" }, { "text": "People will travel to Mars.", "g": "will" }, { "text": "We will live in virtual worlds.", "g": "will" }, { "text": "Scientists will invent new machines.", "g": "will" },
+        { "text": "There were forests here.", "g": "was" }, { "text": "The school was small in 1996.", "g": "was" }, { "text": "The signal was weak.", "g": "was" }, { "text": "We were new here.", "g": "was" }
+      ],
+      "speed": [
+        { "text": "Robots ___ help people.", "opts": ["will", "was", "were"], "a": "will" },
+        { "text": "People ___ travel to Mars one day.", "opts": ["will", "were", "was"], "a": "will" },
+        { "text": "___ time travellers change history?", "opts": ["Will", "Was", "Were"], "a": "Will" },
+        { "text": "In 1996 the school ___ small.", "opts": ["was", "will", "were"], "a": "was" },
+        { "text": "We ___ not forget this.", "opts": ["will", "was", "were"], "a": "will" },
+        { "text": "What ___ happen next?", "opts": ["will", "was", "were"], "a": "will" }
+      ] },
+
+    { "type": "say", "who": "mei", "text": "Our reply. A film. Which genre?", "tr": "Cevabımız. Bir film. Hangi tür?", "expr": "smile" },
+    { "type": "choice", "who": "mei", "text": "Which genre is our reply?", "tr": "Cevabımız hangi türde?", "options": [
+      { "text": "Science fiction. Time travel. Epic!", "tr": "Bilim kurgu. Zaman yolculuğu. Destansı!" },
+      { "text": "Horror.", "tr": "", "ok": false, "reply": { "who": "omar", "text": "I'm not brave enough to watch this!", "tr": "Bunu izleyecek kadar cesur değilim!", "expr": "worried" } },
+      { "text": "Romantic comedy.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Not my cup of tea. Time travel!", "tr": "Benim tarzım değil. Zaman yolculuğu!", "expr": "think" } }
+    ] },
+    { "type": "say", "who": "leo", "text": "Script first. Write it. 2056.", "tr": "Önce senaryo. Yaz. 2056.", "expr": "smile" },
+    { "type": "journal", "title": "Film script · REPLY · 2056", "hints": ["🤖", "🚀", "📻"], "min": 3, "placeholder": "In 2056, robots will … People will … We will …",
+      "feedback": [
+        { "contains": ["will"], "who": "mei", "text": "Will. The future. Epic script.", "tr": "Will. Gelecek. Destansı senaryo.", "expr": "excited" },
+        { "contains": ["2056"], "who": "mei", "text": "Good. What will happen there?", "tr": "Güzel. Orada ne olacak?", "expr": "smile" },
+        { "contains": [], "who": "mei", "text": "Try: In 2056, robots will…", "tr": "Dene: In 2056, robots will…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": false }, "signal": 0.2 },
+    { "type": "say", "who": "yasemin", "text": "The transmitter. Locked. Say it to 2056.", "tr": "Verici. Kilitli. 2056'ya söyle.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "Hello, 2056. We hear you.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "omar", "text": "Open! Lights, camera, action!", "tr": "Açıldı! Işık, kamera, motor!", "expr": "excited" },
+    { "type": "interview", "title": "REPLY · a film from 2026", "file": "reply", "questions": [
+      { "q": "What will happen in 2056?", "who": "leo", "a": "Robots will clean the oceans.", "you": "And you? What will happen in 2056?" },
+      { "q": "Will people travel to other planets?", "who": "mei", "a": "Yes. They will explore Mars.", "you": "And you? Will you travel to space?" },
+      { "q": "What will you do?", "who": "omar", "a": "I will build Echo. With you!", "you": "And you? What will you do?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "What's next?", "tr": "Sırada ne var?", "expr": "smile" },
+
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": true }, "signal": 0.4, "static": 0.2 },
+    { "type": "say", "who": "yasemin", "text": "Send it. Now.", "tr": "Gönder. Şimdi.", "expr": "excited" },
+    { "type": "note", "mode": "reveal", "title": "TRANSMITTING · 2026 → 2056", "ms": 1000, "charMs": 40, "hold": 2200,
+      "lines": ["Reply from Northgate, 2026.", "Student: {name}, from {country}.", "We hear you. We will help.", "Sent."] },
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": true }, "signal": 0.95, "static": 0.2 },
+    { "type": "say", "who": "echo", "text": "Received. It worked. Thank you, {name}.", "tr": "Alındı. İşe yaradı. Teşekkürler, {name}." },
+    { "type": "say", "who": "echo", "text": "Goodbye, {name}. Until next time.", "tr": "Hoşça kal, {name}. Bir dahaki sefere." },
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": false }, "signal": 0.3, "static": 0.8 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "…Привет?… Ciao?… こんにちは?…", "tr": "…yeni bir sinyal…" },
+    { "type": "say", "who": "yasemin", "text": "A new signal. A new voice.", "tr": "Yeni bir sinyal. Yeni bir ses.", "expr": "surprised" },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "End of season 1 · Next", "text": "Grade 10", "ms": 6000 }
+  ]
+}

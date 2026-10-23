@@ -1,0 +1,134 @@
+{
+  "id": "07",
+  "title": "Warning",
+  "theme": "Life in the World & Nature",
+  "cefr": "B1.1",
+  "next": "08",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["simple present for facts (Which animals are endangered? Where do they live?)", "past of to be: was/were, there was/were", "should for advice"],
+  "vocab_key": ["endangered", "habitat", "polar bear", "sea turtle", "Asian elephant", "tiger", "cheetah", "chimpanzee", "grasslands", "rainforests", "woodlands", "jungles", "oceans", "deserts", "survive", "breed", "hunt", "protect", "save", "reduce", "at risk", "habitat loss", "overfishing", "sea pollution", "illegal", "volunteer"],
+  "social": ["It's not too late!", "Every little bit helps!", "Spread the word!", "In safe hands!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "camp", "vars": { "eyes": false }, "ms": 3600, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "camp", "vars": { "eyes": true }, "sfx": "hoot", "ms": 3400 },
+      { "preset": "camp", "vars": { "eyes": true }, "ms": 3600, "signal": 0.35, "static": 0.5 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 7 · Warning", "ms": 3400 },
+
+    { "type": "bg", "preset": "camp", "vars": { "eyes": false } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "leo", "text": "No city. No noise. Just stars.", "tr": "Şehir yok. Gürültü yok. Sadece yıldızlar.", "expr": "smile" },
+    { "type": "say", "who": "mei", "text": "Listen. Something is out there.", "tr": "Dinle. Dışarıda bir şey var.", "expr": "worried" },
+    { "type": "say", "who": "omar", "text": "A tiger? Here? It's too late!", "tr": "Kaplan mı? Burada mı? Çok geç!", "expr": "worried" },
+    { "type": "say", "who": "yasemin", "text": "It's not too late. Listen. The radio.", "tr": "Çok geç değil. Dinle. Radyo.", "expr": "think" },
+    { "type": "bg", "preset": "camp", "signal": 0.4, "static": 0.5 },
+    { "type": "say", "who": "echo", "text": "…there… were… now… there… are… not…", "tr": "…vardı… şimdi… yok…" },
+    { "type": "broken_message", "text": "There [were] many. Now there [are] few. You [should] help.",
+      "options": { "were": ["were", "was", "are"], "are": ["are", "is", "were"], "should": ["should", "are", "were"] },
+      "hints": { "were": "⏮️", "was": "👤", "are": "▶️", "is": "👤", "should": "💡" } },
+    { "type": "choice", "who": "echo", "text": "There were forests. Now?", "tr": "Ormanlar vardı. Şimdi?", "options": [
+      { "text": "Now there are none.", "tr": "Şimdi hiç yok." },
+      { "text": "Now there were none.", "tr": "", "ok": false, "reply": { "text": "…now… are…", "tr": "…şimdi… are…" } },
+      { "text": "Now there is forests.", "tr": "", "ok": false, "reply": { "text": "…forests… are…", "tr": "…forests… are…" } }
+    ] },
+    { "type": "bg", "preset": "camp", "signal": 0.1, "static": 0.1 },
+    { "type": "say", "who": "yasemin", "text": "A warning. About animals. About here.", "tr": "Bir uyarı. Hayvanlar hakkında. Burası hakkında.", "expr": "worried" },
+
+    { "type": "say", "who": "leo", "text": "Which animals? Where do they live?", "tr": "Hangi hayvanlar? Nerede yaşıyorlar?", "expr": "think" },
+    { "type": "match", "title": "Animal · habitat", "who": "leo", "pairs": [
+      { "a": "🐢 sea turtle", "b": "oceans and beaches" },
+      { "a": "🐘 Asian elephant", "b": "woodlands" },
+      { "a": "🐯 tiger", "b": "jungles" },
+      { "a": "🐆 cheetah", "b": "grasslands" },
+      { "a": "🐵 chimpanzee", "b": "rainforests" },
+      { "a": "🐻‍❄️ polar bear", "b": "Arctic ice" }
+    ] },
+    { "type": "say", "who": "mei", "text": "Sea turtles. On this coast. Come.", "tr": "Deniz kaplumbağaları. Bu sahilde. Gel.", "expr": "think" },
+
+    { "type": "bg", "preset": "coast" },
+    { "type": "say", "who": "omar", "text": "A sign. A fact file. Read it.", "tr": "Bir tabela. Bilgi kartı. Oku.", "expr": "smile" },
+    { "type": "note", "title": "SEA TURTLES · Fact file",
+      "text": "Fifty years ago there were many sea turtles on this coast. Today there are few. Reasons: sea pollution, overfishing and habitat loss. They need clean, dark beaches to breed. You should not touch the nests. Every little bit helps!",
+      "question": { "who": "omar", "text": "They need bright lights to breed, right?", "tr": "Üremek için parlak ışık lazım, değil mi?", "expr": "wink", "options": [
+        { "text": "No. Clean, dark beaches.", "tr": "Hayır. Temiz, karanlık sahiller." },
+        { "text": "Yes. Bright lights.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Read again. Dark beaches.", "tr": "Tekrar oku. Karanlık sahiller.", "expr": "think" } },
+        { "text": "They need plastic.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Plastic? That's pollution!", "tr": "Plastik mi? O kirlilik!", "expr": "worried" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "There were many. Now there are few.", "tr": "Çoktu. Şimdi az.", "expr": "worried" },
+
+    { "type": "say", "who": "leo", "text": "Then, or now? Was, or is? Sort.", "tr": "O zaman mı, şimdi mi? Was mı, is mi? Ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "then", "label": "then · was / were" }, { "id": "now", "label": "now · is / are" }],
+      "cards": [
+        { "text": "There were 700,000 leopards.", "g": "then" }, { "text": "Their habitat was the jungle.", "g": "then" }, { "text": "The forests were cleaner.", "g": "then" }, { "text": "Tigers were safe here.", "g": "then" },
+        { "text": "There are 250,000 today.", "g": "now" }, { "text": "Their habitat is small now.", "g": "now" }, { "text": "The air is polluted.", "g": "now" }, { "text": "They are at risk.", "g": "now" }
+      ],
+      "speed": [
+        { "text": "There ___ 700,000 leopards 50 years ago.", "opts": ["were", "was", "are"], "a": "were" },
+        { "text": "Now there ___ 250,000.", "opts": ["are", "were", "is"], "a": "are" },
+        { "text": "The jungle ___ cleaner then.", "opts": ["was", "is", "were"], "a": "was" },
+        { "text": "We ___ protect their habitats.", "opts": ["should", "were", "are"], "a": "should" },
+        { "text": "Tigers ___ at risk today.", "opts": ["are", "were", "was"], "a": "are" },
+        { "text": "___ should we do?", "opts": ["What", "Were", "Was"], "a": "What" }
+      ] },
+
+    { "type": "say", "who": "omar", "text": "Every little bit helps! What should we do?", "tr": "Her katkı önemli! Ne yapmalıyız?", "expr": "excited" },
+    { "type": "match", "title": "What should we do?", "who": "omar", "pairs": [
+      { "a": "🌳 habitat loss", "b": "We should protect the forests." },
+      { "a": "🎣 overfishing", "b": "We should fish less." },
+      { "a": "🛢️ sea pollution", "b": "We should clean the oceans." },
+      { "a": "🚫 illegal hunting", "b": "We should stop the hunters." },
+      { "a": "🙋 no volunteers", "b": "We should spread the word!" }
+    ] },
+
+    { "type": "bg", "preset": "coast", "signal": 0.1 },
+    { "type": "say", "who": "yasemin", "text": "A documentary. For the signal. Lights, camera.", "tr": "Bir belgesel. Sinyal için. Işık, kamera.", "expr": "excited" },
+    { "type": "say", "who": "mei", "text": "The gate to the beach. Locked. Say it.", "tr": "Sahil kapısı. Kilitli. Söyle.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "We're here. It's not too late!", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "leo", "text": "Open! Camera on. Take one.", "tr": "Açıldı! Kamera açık. Birinci çekim.", "expr": "excited" },
+    { "type": "interview", "title": "Documentary · Warning · Take 1", "file": "documentary", "questions": [
+      { "q": "Which animals are endangered here?", "who": "leo", "a": "Sea turtles. Tigers. Polar bears.", "you": "And you? Which animals are at risk?" },
+      { "q": "What were their habitats like 50 years ago?", "who": "mei", "a": "Cleaner. Safer. Much bigger.", "you": "And now? What are they like?" },
+      { "q": "What should we do?", "who": "omar", "a": "Protect habitats. Reduce pollution. Spread the word!", "you": "And you? What should we do?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "In safe hands! Great take.", "tr": "Güvenli ellerde! Harika çekim.", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 7.", "tr": "Kaptan günlüğü. Yedinci gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Day 7", "hints": ["🐢", "🌊", "📢"], "min": 2, "placeholder": "There were … Now there are … We should …",
+      "feedback": [
+        { "contains": ["should"], "who": "yasemin", "text": "Should. Advice. Spread the word!", "tr": "Should. Tavsiye. Duyur!", "expr": "excited" },
+        { "contains": ["were"], "who": "yasemin", "text": "Then and now. Good. What should we do?", "tr": "O zaman ve şimdi. Güzel. Ne yapmalıyız?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: There were… Now there are… We should…", "tr": "Dene: There were… Now there are… We should…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "camp", "vars": { "eyes": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1200 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "WARNING", "ms": 1200, "charMs": 45, "hold": 2400,
+      "lines": ["There were forests here.", "Now there are none.", "There was a school here.", "It's not too late, {name}."] },
+    { "type": "bg", "preset": "camp", "signal": 0.95, "static": 0.9 },
+    { "type": "say", "who": "yasemin", "text": "That voice. I know it. It's Echo.", "tr": "O ses. Tanıyorum. Echo.", "expr": "surprised" },
+    { "type": "say", "who": "echo", "text": "Yes. It's me. From… later.", "tr": "Evet. Benim. Daha… sonradan." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Reply", "ms": 5000 }
+  ]
+}

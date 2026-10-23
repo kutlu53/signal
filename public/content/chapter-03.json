@@ -1,0 +1,148 @@
+{
+  "id": "03",
+  "title": "The Blurred Face",
+  "theme": "Personal Life: Physical Appearance & Personality",
+  "cefr": "B1.1",
+  "next": "04",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["to be + adjective (What does she look like? / What's she like?)", "too / enough"],
+  "vocab_key": ["slim", "well-built", "plump", "medium-height", "tall", "short", "blond(e)", "wavy", "curly", "straight", "fair", "tan", "dark", "young", "middle-aged", "elderly", "cheerful", "shy", "serious", "calm", "brave", "honest", "forgetful", "outgoing", "silly", "kind"],
+  "social": ["You look amazing!", "What a good person!", "That sounds great!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "library", "vars": { "book": false, "erased": false }, "ms": 3200, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "library", "vars": { "book": true }, "ms": 3000 },
+      { "preset": "library", "vars": { "book": true, "erased": true }, "ms": 3800, "signal": 0.3, "static": 0.5 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 3 · The Blurred Face", "ms": 3400 },
+
+    { "type": "bg", "preset": "library", "vars": { "book": true, "erased": true } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "mei", "text": "Look. A yearbook. 1996.", "tr": "Bak. Bir yıllık. 1996.", "expr": "surprised" },
+    { "type": "say", "who": "yasemin", "text": "Thirty years old. Dusty.", "tr": "Otuz yıllık. Tozlu." },
+    { "type": "say", "who": "omar", "text": "You look amazing in it, Mei!", "tr": "İçinde harika görünüyorsun, Mei!", "expr": "wink" },
+    { "type": "say", "who": "mei", "text": "Silly. I'm not in it.", "tr": "Saçma. Ben içinde değilim.", "expr": "think" },
+    { "type": "say", "who": "leo", "text": "One photo. The face is gone.", "tr": "Bir fotoğraf. Yüz silinmiş.", "expr": "worried" },
+    { "type": "bg", "preset": "library", "signal": 0.3, "static": 0.4 },
+    { "type": "say", "who": "echo", "text": "…find… the… face…", "tr": "…yüzü… bul…" },
+    { "type": "broken_message", "text": "The [face] is gone. [Look] at the hair. [Who] is it?",
+      "options": { "face": ["face", "foot", "phone"], "Look": ["Look", "Eat", "Sleep"], "Who": ["Who", "Where", "When"] },
+      "hints": { "face": "🙂", "foot": "🦶", "phone": "📱", "Look": "👀", "Eat": "🍽️", "Sleep": "😴", "Who": "👤", "Where": "🗺️", "When": "⏰" } },
+    { "type": "bg", "preset": "library", "signal": 0, "static": 0 },
+
+    { "type": "say", "who": "yasemin", "text": "First, the others. Who's who?", "tr": "Önce diğerleri. Kim kimdir?", "expr": "think" },
+    { "type": "say", "who": "mei", "text": "I'll describe. You find.", "tr": "Ben tarif edeyim. Sen bul.", "expr": "smile" },
+    { "type": "whois", "who": "mei",
+      "people": [
+        { "id": "ada", "name": "Ada", "spec": { "height": "tall", "build": "slim", "hair": "wavy", "hairColor": "blond", "skin": "fair", "age": "young", "mood": "cheerful", "shirt": "#8a3b5a" } },
+        { "id": "can", "name": "Can", "spec": { "height": "short", "build": "well-built", "hair": "curly", "hairColor": "dark", "skin": "tan", "age": "young", "mood": "serious", "shirt": "#2f6b4a" } },
+        { "id": "lina", "name": "Lina", "spec": { "height": "medium", "build": "plump", "hair": "straight", "hairColor": "brown", "skin": "fair", "age": "young", "mood": "shy", "glasses": true, "shirt": "#b08d3c" } },
+        { "id": "tomas", "name": "Tomas", "spec": { "height": "tall", "build": "slim", "hair": "short", "hairColor": "blond", "skin": "fair", "age": "young", "mood": "calm", "shirt": "#3b5a8a" } },
+        { "id": "nur", "name": "Nur", "spec": { "height": "medium", "build": "slim", "hair": "curly", "hairColor": "dark", "skin": "dark", "age": "young", "mood": "cheerful", "shirt": "#6b4a8a" } },
+        { "id": "s12", "name": "12", "erased": true, "spec": { "height": "medium", "build": "slim", "hair": "wavy", "hairColor": "dark", "skin": "fair", "age": "young", "mood": "calm" } }
+      ],
+      "rounds": [
+        { "target": "ada", "lines": ["She's tall and slim.", "Long wavy blonde hair. Cheerful."] },
+        { "target": "can", "lines": ["He's short and well-built.", "Curly dark hair. Serious."] },
+        { "target": "lina", "lines": ["She's medium-height. Straight brown hair.", "Glasses. A bit shy."] },
+        { "target": "tomas", "lines": ["He's tall. Short blond hair.", "Fair skin. Calm."] }
+      ] },
+    { "type": "say", "who": "yasemin", "text": "Great. Now the blurred one.", "tr": "Harika. Şimdi silik olan.", "expr": "smile" },
+    { "type": "say", "who": "omar", "text": "Easy! Curly blond hair. Plump.", "tr": "Kolay! Kıvırcık sarı saç. Tombul.", "expr": "wink" },
+    { "type": "say", "who": "leo", "text": "Omar. Read the fact file.", "tr": "Omar. Bilgi kartını oku.", "expr": "think" },
+    { "type": "note", "title": "Yearbook 1996 · Student 12",
+      "text": "Student 12. Medium-height and slim. Wavy dark hair. Fair skin. Young. Personality: brave, honest, a bit forgetful. Favourite thing: old radios.",
+      "question": { "who": "omar", "text": "Curly blond hair, right?", "tr": "Kıvırcık sarı saç, değil mi?", "expr": "wink", "options": [
+        { "text": "No. Wavy dark hair.", "tr": "Hayır. Dalgalı koyu saç." },
+        { "text": "Yes. Curly and blond.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Read again. Wavy. Dark.", "tr": "Tekrar oku. Dalgalı. Koyu.", "expr": "think" } },
+        { "text": "Straight red hair.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Red? It says dark.", "tr": "Kızıl mı? Koyu yazıyor.", "expr": "worried" } }
+      ] } },
+    { "type": "say", "who": "omar", "text": "Okay. Wavy. Dark. Sorry!", "tr": "Tamam. Dalgalı. Koyu. Pardon!", "expr": "smile" },
+
+    { "type": "say", "who": "yasemin", "text": "Looks, or personality? Sort them.", "tr": "Görünüş mü, kişilik mi? Ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "look", "label": "What does she look like?" }, { "id": "like", "label": "What's she like?" }],
+      "cards": [
+        { "text": "She's tall and slim.", "g": "look" }, { "text": "He has curly dark hair.", "g": "look" }, { "text": "She's medium-height.", "g": "look" }, { "text": "Fair skin, blond hair.", "g": "look" },
+        { "text": "He's brave and honest.", "g": "like" }, { "text": "She's a bit shy.", "g": "like" }, { "text": "He's cheerful and outgoing.", "g": "like" }, { "text": "Forgetful, but kind.", "g": "like" }
+      ],
+      "speed": [
+        { "text": "What ___ he look like?", "opts": ["does", "is", "do"], "a": "does" },
+        { "text": "She ___ wavy hair.", "opts": ["has", "is", "have"], "a": "has" },
+        { "text": "He ___ tall and slim.", "opts": ["is", "has", "does"], "a": "is" },
+        { "text": "What's she ___?", "opts": ["like", "look", "likes"], "a": "like" },
+        { "text": "The photo is ___ dark.", "opts": ["too", "enough", "very"], "a": "too" },
+        { "text": "It's bright ___ now.", "opts": ["enough", "too", "much"], "a": "enough" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "Now, build the face.", "tr": "Şimdi yüzü oluştur.", "expr": "excited" },
+    { "type": "composite", "who": "mei",
+      "base": { "mood": "calm", "shirt": "#3b5a8a" },
+      "target": { "height": "medium", "build": "slim", "hair": "wavy", "hairColor": "dark", "skin": "fair", "age": "young" },
+      "clues": ["Medium-height. Slim.", "Wavy, dark hair.", "Fair skin. Young."],
+      "features": [
+        { "key": "height", "label": "height", "values": [{ "v": "short", "t": "short" }, { "v": "medium", "t": "medium-height" }, { "v": "tall", "t": "tall" }] },
+        { "key": "build", "label": "build", "values": [{ "v": "slim", "t": "slim" }, { "v": "well-built", "t": "well-built" }, { "v": "plump", "t": "plump" }] },
+        { "key": "hair", "label": "hair", "values": [{ "v": "straight", "t": "straight" }, { "v": "wavy", "t": "wavy" }, { "v": "curly", "t": "curly" }] },
+        { "key": "hairColor", "label": "colour", "values": [{ "v": "blond", "t": "blond" }, { "v": "brown", "t": "brown" }, { "v": "dark", "t": "dark" }] },
+        { "key": "skin", "label": "skin", "values": [{ "v": "fair", "t": "fair" }, { "v": "tan", "t": "tan" }, { "v": "dark", "t": "dark" }] },
+        { "key": "age", "label": "age", "values": [{ "v": "young", "t": "young" }, { "v": "middle-aged", "t": "middle-aged" }, { "v": "elderly", "t": "elderly" }] }
+      ] },
+    { "type": "say", "who": "mei", "text": "That's the face. I know it.", "tr": "Bu o yüz. Biliyorum.", "expr": "worried" },
+    { "type": "say", "who": "leo", "text": "The photo is too dark. Light!", "tr": "Fotoğraf çok karanlık. Işık!", "expr": "worried" },
+    { "type": "choice", "who": "yasemin", "text": "Is the lamp bright enough?", "tr": "Lamba yeterince parlak mı?", "options": [
+      { "text": "No. It's too dark.", "tr": "Hayır. Çok karanlık." },
+      { "text": "Yes. It's too dark.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Yes, and too dark? Choose one.", "tr": "Evet ve çok karanlık mı? Birini seç.", "expr": "think" } },
+      { "text": "It's dark enough.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Dark enough? We need light!", "tr": "Yeterince karanlık mı? Işık lazım!", "expr": "surprised" } }
+    ] },
+
+    { "type": "bg", "preset": "library_night", "vars": { "book": true, "erased": false }, "signal": 0 },
+    { "type": "say", "who": "yasemin", "text": "The archive room. Locked. Say it.", "tr": "Arşiv odası. Kilitli. Söyle.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "I think it's me.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "omar", "text": "Open! Posters. Fact files. Faces!", "tr": "Açıldı! Posterler. Bilgi kartları. Yüzler!", "expr": "excited" },
+    { "type": "say", "who": "yasemin", "text": "Guess Who. Describe a friend. We guess.", "tr": "Kim Bu. Bir arkadaş tarif et. Biz tahmin edelim.", "expr": "smile" },
+    { "type": "interview", "title": "Guess Who · Fact file", "file": "guesswho", "questions": [
+      { "q": "What does Yasemin look like?", "who": "leo", "a": "She's tall. Long dark hair.", "you": "And you? What do you look like?" },
+      { "q": "What's Omar like?", "who": "mei", "a": "He's cheerful and outgoing. A bit silly.", "you": "And you? What are you like?" },
+      { "q": "What does Mei look like?", "who": "omar", "a": "She's slim. Short straight hair.", "you": "Describe a friend. We guess!" }
+    ] },
+    { "type": "say", "who": "omar", "text": "What a good person!", "tr": "Ne iyi bir insan!", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 3.", "tr": "Kaptan günlüğü. Üçüncü gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Day 3", "hints": ["📖", "🧑", "📻"], "min": 2, "placeholder": "Student 12 is … He/She has … hair.",
+      "feedback": [
+        { "contains": ["hair"], "who": "yasemin", "text": "Hair, yes. Like a detective.", "tr": "Saç, evet. Dedektif gibi.", "expr": "excited" },
+        { "contains": ["is"], "who": "yasemin", "text": "Good. What about the hair?", "tr": "Güzel. Peki saçı?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: Student 12 is… has…", "tr": "Dene: Student 12 is… has…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "library_night", "vars": { "book": true, "erased": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1200 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "composite", "mode": "reveal", "ms": 1400, "letterMs": 260, "hold": 2400, "static": 0.3, "name": "{name}",
+      "base": { "mood": "calm", "shirt": "#3b5a8a" },
+      "target": { "height": "medium", "build": "slim", "hair": "wavy", "hairColor": "dark", "skin": "fair", "age": "young" } },
+    { "type": "bg", "preset": "library_night", "signal": 0.95, "static": 0.9 },
+    { "type": "say", "who": "echo", "text": "Class of 1996. Student 12. {name}.", "tr": "1996 mezunları. 12 numaralı öğrenci. {name}." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Frequency", "ms": 5000 }
+  ]
+}

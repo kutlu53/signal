@@ -1,0 +1,145 @@
+{
+  "id": "11",
+  "season": 2,
+  "title": "In the Pink",
+  "theme": "Personal Life & Well-Being",
+  "cefr": "B1.2",
+  "next": "12",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["comparatives (better than, as…as, the same as)", "should (advice)", "can / could (ability)", "-ed / -ing adjectives", "be going to for future plans"],
+  "vocab_key": ["forehead", "chin", "eyelash", "wrist", "elbow", "stomach", "flu", "fever", "toothache", "allergy", "dizzy", "self-care", "empathy", "sustainability", "scarf", "bracelet", "handbag", "striped", "floral", "vintage", "stylish"],
+  "social": ["At last, you're here in the flesh!", "I'm feeling in the pink and ready to study!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "lab", "vars": { "clock": "07:30", "screen": "INCOMING CALL · MARCO" }, "ms": 3200, "rain": 0, "signal": 0.3, "static": 0.4 },
+      { "preset": "corridor", "ms": 2600, "signal": 0, "static": 0 },
+      { "preset": "nurse", "vars": { "clock": "" }, "ms": 3800, "signal": 0.2, "static": 0.2 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 3 · In the Pink", "ms": 3600 },
+
+    { "type": "bg", "preset": "nurse" },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "omar", "text": "Marco called. Then I got the flu.", "tr": "Marco aradı. Sonra grip oldum.", "expr": "worried" },
+    { "type": "say", "who": "staff", "text": "Fever, 38.5. You should rest, Omar.", "tr": "Ateş 38.5. Dinlenmelisin, Omar.", "expr": "think" },
+    { "type": "say", "who": "yasemin", "text": "Where does it hurt? Show us.", "tr": "Neresi ağrıyor? Göster.", "expr": "worried" },
+    { "type": "body", "who": "omar", "model": "omar", "expr": "worried", "spots": ["forehead", "eye", "nose", "chin", "ear", "neck", "shoulder", "chest", "stomach", "arm", "wrist", "elbow"], "rounds": [
+      { "text": "My forehead is hot. Fever.", "target": "forehead", "label": "forehead" },
+      { "text": "My nose is blocked. I can't smell.", "target": "nose", "label": "nose" },
+      { "text": "My throat hurts. Here, my neck.", "target": "neck", "label": "neck" },
+      { "text": "My chest hurts when I cough.", "target": "chest", "label": "chest" },
+      { "text": "And my stomach. No breakfast.", "target": "stomach", "label": "stomach" },
+      { "text": "My wrist, from the keyboard!", "target": "wrist", "label": "wrist" }
+    ] },
+    { "type": "say", "who": "mei", "text": "Flu. And a sore wrist. Poor Omar.", "tr": "Grip. Ve ağrıyan bilek. Zavallı Omar.", "expr": "worried" },
+    { "type": "choice", "who": "omar", "text": "What should I do, {name}?", "tr": "Ne yapmalıyım, {name}?", "expr": "worried", "options": [
+      { "text": "You should rest and drink water.", "tr": "Dinlenmeli ve su içmelisin.", "reply": { "who": "omar", "text": "Boring, but okay. Thanks.", "tr": "Sıkıcı ama tamam. Sağ ol.", "expr": "smile" } },
+      { "text": "You should play rugby.", "tr": "", "ok": false, "reply": { "who": "staff", "text": "With a fever? No!", "tr": "Ateşle mi? Hayır!", "expr": "surprised" } },
+      { "text": "You should to rest.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Should rest. No \"to\".", "tr": "Should rest. \"to\" yok.", "expr": "think" } }
+    ] },
+
+    { "type": "bg", "preset": "common" },
+    { "type": "say", "who": "leo", "text": "Marco's call. He's into fashion. Listen.", "tr": "Marco'nun araması. Modaya düşkün. Dinle.", "expr": "smile" },
+    { "type": "bg", "preset": "common", "signal": 0.4, "static": 0.3 },
+    { "type": "say", "who": "echo", "text": "…ciao… my school… by the lake…", "tr": "…ciao… okulum… göl kenarında…" },
+    { "type": "broken_message", "text": "I'm Marco. Rowing is [harder] than running. Our lake is as [blue] as the sky. I'm [feeling] in the pink!",
+      "options": { "harder": ["harder", "hard", "more hard"], "blue": ["blue", "bluer", "bluest"], "feeling": ["feeling", "feel", "felt"] },
+      "hints": { "harder": "📈", "hard": "🪨", "more hard": "❌", "blue": "🔵", "bluer": "📈", "bluest": "🏆", "feeling": "⏳", "feel": "🫀", "felt": "⏮️" } },
+    { "type": "choice", "who": "echo", "text": "Is Northgate bigger than my school?", "tr": "Northgate benim okulumdan büyük mü?", "options": [
+      { "text": "I think it's as big as yours.", "tr": "Bence seninki kadar büyük." },
+      { "text": "It's more big than yours.", "tr": "", "ok": false, "reply": { "text": "…bigger… not more big…", "tr": "…bigger… more big değil…" } },
+      { "text": "It's big than yours.", "tr": "", "ok": false, "reply": { "text": "…bigger THAN…", "tr": "…bigger THAN…" } }
+    ] },
+    { "type": "bg", "preset": "common", "signal": 0.1, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Marco is sending a photo. Fashion week!", "tr": "Marco bir fotoğraf gönderiyor. Moda haftası!", "expr": "excited" },
+    { "type": "note", "title": "MARCO · my style · fact file",
+      "text": "I'm Marco, 15, from Lake Como. Rowing club, Year 10. My style: a striped scarf, a vintage jacket and a leather bracelet. I think vintage is more stylish than new. My sister's style is the same as mine. We're going to visit Northgate in spring!",
+      "question": { "who": "omar", "text": "Marco wears a floral scarf, doesn't he?", "tr": "Marco çiçekli atkı takıyor, değil mi?", "expr": "wink", "options": [
+        { "text": "No. A striped scarf.", "tr": "Hayır. Çizgili atkı." },
+        { "text": "Yes. Floral.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Read again. Striped.", "tr": "Tekrar oku. Çizgili.", "expr": "think" } },
+        { "text": "A floral jacket.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "A vintage jacket. Striped scarf.", "tr": "Vintage ceket. Çizgili atkı.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "mei", "text": "Spring! They're going to visit us.", "tr": "Bahar! Bizi ziyaret edecekler.", "expr": "excited" },
+
+    { "type": "say", "who": "leo", "text": "Fashion words. Match them.", "tr": "Moda kelimeleri. Eşleştir.", "expr": "smile" },
+    { "type": "match", "title": "Style", "who": "leo", "pairs": [
+      { "a": "🧣 scarf", "b": "you wear it round your neck" },
+      { "a": "📿 bracelet", "b": "you wear it on your wrist" },
+      { "a": "👜 handbag", "b": "a small bag for every day" },
+      { "a": "🦓 striped", "b": "a pattern of lines" },
+      { "a": "🌸 floral", "b": "a pattern of flowers" },
+      { "a": "🕰️ vintage", "b": "old style, from the past" }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Feelings: -ed, or -ing? Sort them.", "tr": "Duygular: -ed mi, -ing mi? Ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "ed", "label": "-ed · how I feel" }, { "id": "ing", "label": "-ing · what it is like" }],
+      "cards": [
+        { "text": "Omar is bored in bed.", "g": "ed" }, { "text": "I'm excited about spring.", "g": "ed" }, { "text": "Leo was tired after rowing.", "g": "ed" }, { "text": "She felt dizzy with fever.", "g": "ed" },
+        { "text": "The flu is boring.", "g": "ing" }, { "text": "Fashion week is exciting.", "g": "ing" }, { "text": "Rowing is tiring.", "g": "ing" }, { "text": "The call was surprising.", "g": "ing" }
+      ],
+      "speed": [
+        { "text": "Rowing is ___ than running.", "opts": ["harder", "more hard", "hard"], "a": "harder" },
+        { "text": "Vintage is ___ stylish than new.", "opts": ["more", "most", "-er"], "a": "more" },
+        { "text": "My scarf is as warm ___ yours.", "opts": ["as", "than", "like"], "a": "as" },
+        { "text": "Omar is ___. The film is boring.", "opts": ["bored", "boring", "bore"], "a": "bored" },
+        { "text": "You ___ rest with a fever.", "opts": ["should", "could", "shouldn't"], "a": "should" },
+        { "text": "She ___ run fast when she was ten.", "opts": ["could", "can", "should"], "a": "could" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "Tags again. Marco loves them too.", "tr": "Yine soru kuyrukları. Marco da seviyor.", "expr": "think" },
+    { "type": "tags", "title": "Question tags", "who": "echo", "items": [
+      { "text": "You're feeling better, ___?", "opts": ["aren't you", "are you", "don't you"], "a": "aren't you" },
+      { "text": "Omar has the flu, ___?", "opts": ["doesn't he", "hasn't he", "isn't he"], "a": "doesn't he" },
+      { "text": "You can row, ___?", "opts": ["can't you", "can you", "don't you"], "a": "can't you" },
+      { "text": "Vintage isn't expensive, ___?", "opts": ["is it", "isn't it", "does it"], "a": "is it" },
+      { "text": "They're going to visit, ___?", "opts": ["aren't they", "are they", "do they"], "a": "aren't they" }
+    ] },
+
+    { "type": "bg", "preset": "nurse", "signal": 0.1 },
+    { "type": "say", "who": "staff", "text": "Omar, say the magic words. Then go.", "tr": "Omar, sihirli sözleri söyle. Sonra git.", "expr": "smile" },
+    { "type": "voice_lock", "phrase": "I'm feeling in the pink.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "omar", "text": "At last! Here in the flesh!", "tr": "Nihayet! Burada, canlı kanlı!", "expr": "excited" },
+    { "type": "say", "who": "yasemin", "text": "Record it. Well-being. For Marco.", "tr": "Kaydet. İyi olma hâli. Marco için.", "expr": "smile" },
+    { "type": "interview", "title": "Well-Being · project", "file": "wellbeing", "questions": [
+      { "q": "How do you take care of yourself?", "who": "leo", "a": "I sleep eight hours. I row.", "you": "And you? How do you take care of yourself?" },
+      { "q": "What's your style like?", "who": "mei", "a": "Simple. A scarf. Vintage is better.", "you": "And you? What's your style like?" },
+      { "q": "What should we do about stress?", "who": "omar", "a": "Rest. Talk. Empathy helps.", "you": "And you? What should we do?" }
+    ] },
+    { "type": "say", "who": "leo", "text": "Great. Ready to study, in the pink.", "tr": "Harika. Çalışmaya hazır, turp gibi.", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 3.", "tr": "Kaptan günlüğü. Üçüncü gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Season 2 · Day 3", "hints": ["🤒", "🧣", "📻"], "min": 2, "placeholder": "Omar has … He should … My style is … than …",
+      "feedback": [
+        { "contains": ["than"], "who": "yasemin", "text": "Than! A comparison. Stylish log.", "tr": "Than! Karşılaştırma. Şık günlük.", "expr": "excited" },
+        { "contains": ["should"], "who": "yasemin", "text": "Good advice. Compare your style too?", "tr": "İyi tavsiye. Tarzını da karşılaştır?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: Omar has… He should…", "tr": "Dene: Omar has… He should…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "lab", "vars": { "screen": "TUTOR · SEARCHING…" }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "TUTOR · signal 3", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["Signal 3: Japanese. 104.5 FM.", "A school in the mountains. A treehouse.", "Student: Yuki, Year 10.", "Her family is older than yours, {name}."] },
+    { "type": "bg", "preset": "lab", "vars": { "screen": "SIGNAL 3 · YUKI" }, "signal": 0.95, "static": 0.8 },
+    { "type": "say", "who": "echo", "text": "Yuki's grandmother was at Northgate. 1996.", "tr": "Yuki'nin büyükannesi Northgate'teydi. 1996." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Chin Up", "ms": 5000 }
+  ]
+}

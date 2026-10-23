@@ -1,0 +1,161 @@
+{
+  "id": "16",
+  "season": 2,
+  "title": "A Whole New World",
+  "theme": "Life in the Universe & The Future",
+  "cefr": "B1.2",
+  "next": null,
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "W6", "P1", "V1", "G1"],
+  "grammar": ["zero conditional (If you go to the Moon, everything floats.)", "first conditional (If you want to explore space, you can become an astronaut.)"],
+  "vocab_key": ["planet", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "galaxy", "Milky Way", "orbit", "satellite", "comet", "atmosphere", "astronaut", "spacecraft", "rocket", "to launch", "to land", "to conduct experiments", "space colony", "creature", "mysterious"],
+  "social": ["It's a small world!", "A star is born!", "This is a whole new world!", "It felt like being a man on the moon!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "observatory", "vars": { "ship": false, "clock": "23:40" }, "ms": 3400, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "observatory", "vars": { "ship": true }, "ms": 3400, "signal": 0.3, "static": 0.3 },
+      { "preset": "pier_sky", "vars": { "star": true }, "ms": 3600, "signal": 0.6, "static": 0.2 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 8 · A Whole New World", "ms": 3600 },
+
+    { "type": "bg", "preset": "observatory", "vars": { "ship": false, "clock": "23:45" } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "mei", "text": "The observatory. The last signal. Look up.", "tr": "Gözlemevi. Son sinyal. Yukarı bak.", "expr": "surprised" },
+    { "type": "say", "who": "leo", "text": "Not from Earth. From orbit? From Mars?", "tr": "Dünya'dan değil. Yörüngeden mi? Mars'tan mı?", "expr": "worried" },
+    { "type": "say", "who": "omar", "text": "If it's aliens, I'm going home.", "tr": "Uzaylıysa eve gidiyorum.", "expr": "worried" },
+    { "type": "say", "who": "yasemin", "text": "If we listen, we'll understand. Quiet.", "tr": "Dinlersek anlarız. Sessiz.", "expr": "think" },
+    { "type": "bg", "preset": "observatory", "vars": { "ship": true }, "signal": 0.4, "static": 0.4 },
+    { "type": "say", "who": "echo", "text": "…if you… look up… you'll see us…", "tr": "…yukarı bakarsanız… bizi görürsünüz…" },
+    { "type": "broken_message", "text": "If you [look] up tonight, you will see a light. If a planet is in orbit, it [travels] around a star. If you want to come, you [can] be an astronaut.",
+      "options": { "look": ["look", "will look", "looked"], "travels": ["travels", "will travel", "travel"], "can": ["can", "could", "were"] },
+      "hints": { "look": "👀", "will look": "🔮", "looked": "⏮️", "travels": "🔁", "will travel": "🔮", "travel": "👥", "can": "✅", "could": "⏮️", "were": "❌" } },
+    { "type": "choice", "who": "echo", "text": "What will happen if you reply?", "tr": "Cevap verirseniz ne olur?", "options": [
+      { "text": "If we reply, you'll find us.", "tr": "Cevap verirsek bizi bulursunuz." },
+      { "text": "If we will reply, you find us.", "tr": "", "ok": false, "reply": { "text": "…if we reply… you WILL…", "tr": "…if we reply… you WILL…" } },
+      { "text": "If we replied, you find.", "tr": "", "ok": false, "reply": { "text": "…if + present… will…", "tr": "…if + geniş zaman… will…" } }
+    ] },
+    { "type": "bg", "preset": "observatory", "signal": 0.1, "static": 0 },
+
+    { "type": "say", "who": "mei", "text": "Where is the light? Map the planets.", "tr": "Işık nerede? Gezegenleri haritala.", "expr": "think" },
+    { "type": "orbit", "who": "mei", "planets": [
+      { "id": "mercury", "name": "Mercury", "color": "#b8b8b8", "size": 16 },
+      { "id": "venus", "name": "Venus", "color": "#e8c872", "size": 20 },
+      { "id": "earth", "name": "Earth", "color": "#3b6b8f", "size": 22 },
+      { "id": "mars", "name": "Mars", "color": "#c25a3b", "size": 18 },
+      { "id": "jupiter", "name": "Jupiter", "color": "#d9a677", "size": 34 },
+      { "id": "saturn", "name": "Saturn", "color": "#e8d2a8", "size": 30 },
+      { "id": "uranus", "name": "Uranus", "color": "#9ad0c0", "size": 24 },
+      { "id": "neptune", "name": "Neptune", "color": "#2a4ab0", "size": 24 }
+    ], "rounds": [
+      { "text": "The red planet. Fourth from the Sun.", "target": "mars" },
+      { "text": "Our home. Third from the Sun. Blue.", "target": "earth" },
+      { "text": "The biggest planet. A giant.", "target": "jupiter" },
+      { "text": "The planet with rings.", "target": "saturn" },
+      { "text": "The closest to the Sun. Tiny and hot.", "target": "mercury" },
+      { "text": "The last one. Far, cold and blue.", "target": "neptune" },
+      { "text": "The hottest planet. Thick atmosphere.", "target": "venus" },
+      { "text": "The one that spins on its side.", "target": "uranus" }
+    ] },
+    { "type": "say", "who": "leo", "text": "Eight planets. The light is beyond Neptune.", "tr": "Sekiz gezegen. Işık Neptün'ün ötesinde.", "expr": "surprised" },
+
+    { "type": "say", "who": "omar", "text": "Anya found a file. Project 2100. Read.", "tr": "Anya bir dosya buldu. Proje 2100. Oku.", "expr": "think" },
+    { "type": "note", "title": "PROJECT 2100 · Echo station · orbit",
+      "text": "In 2100 Echo is not a radio. It is a satellite that orbits the Earth. It was launched by four schools in 2056. If a planet's forests die, its atmosphere changes, so Echo sends warnings to the past. If students listen, they can change the future. You did. A star is born.",
+      "question": { "who": "omar", "text": "Echo is a rocket on Mars, isn't it?", "tr": "Echo Mars'ta bir roket, değil mi?", "expr": "wink", "options": [
+        { "text": "No. A satellite that orbits Earth.", "tr": "Hayır. Dünya yörüngesinde bir uydu." },
+        { "text": "Yes. A rocket on Mars.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Read again. A satellite.", "tr": "Tekrar oku. Bir uydu.", "expr": "think" } },
+        { "text": "A comet.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "A satellite. In orbit.", "tr": "Bir uydu. Yörüngede.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "A satellite. Launched by us. In 2056.", "tr": "Bir uydu. Bizim fırlattığımız. 2056'da.", "expr": "surprised" },
+
+    { "type": "say", "who": "leo", "text": "Space words. Match them.", "tr": "Uzay kelimeleri. Eşleştir.", "expr": "smile" },
+    { "type": "match", "title": "Space", "who": "leo", "pairs": [
+      { "a": "🛰️ satellite", "b": "it orbits a planet" },
+      { "a": "🚀 rocket", "b": "it launches into space" },
+      { "a": "🧑‍🚀 astronaut", "b": "a person who goes on a spacewalk" },
+      { "a": "🌌 galaxy", "b": "billions of stars, like the Milky Way" },
+      { "a": "☄️ comet", "b": "ice and dust with a tail" },
+      { "a": "🪐 orbit", "b": "the path around a star" }
+    ] },
+    { "type": "say", "who": "mei", "text": "Always true, or possible? Zero, or first?", "tr": "Her zaman doğru mu, olası mı? Zero mı, first mi?", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "zero", "label": "zero · always true" }, { "id": "first", "label": "first · possible future" }],
+      "cards": [
+        { "text": "If you go to the Moon, everything floats.", "g": "zero" }, { "text": "If a planet orbits a star, it travels around it.", "g": "zero" }, { "text": "If water freezes, it becomes ice.", "g": "zero" }, { "text": "If you heat ice, it melts.", "g": "zero" },
+        { "text": "If we reply, Echo will find us.", "g": "first" }, { "text": "If it's clear, we'll see the light.", "g": "first" }, { "text": "If you train, you can be an astronaut.", "g": "first" }, { "text": "If they launch tonight, we'll watch.", "g": "first" }
+      ],
+      "speed": [
+        { "text": "If you ___ up, you'll see it.", "opts": ["look", "will look", "looked"], "a": "look" },
+        { "text": "If water boils, it ___ steam.", "opts": ["becomes", "will become", "became"], "a": "becomes" },
+        { "text": "If we reply, Echo ___ find us.", "opts": ["will", "finds", "found"], "a": "will" },
+        { "text": "If you want to explore, you ___ train.", "opts": ["can", "could", "were"], "a": "can" },
+        { "text": "Everything ___ if you go to the Moon.", "opts": ["floats", "will floats", "floated"], "a": "floats" },
+        { "text": "We'll watch if it ___ tonight.", "opts": ["launches", "will launch", "launched"], "a": "launches" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "Last tags of the year. Echo's.", "tr": "Yılın son kuyrukları. Echo'nunkiler.", "expr": "smile" },
+    { "type": "tags", "title": "Question tags · finale", "who": "echo", "items": [
+      { "text": "Earth orbits the Sun, ___?", "opts": ["doesn't it", "does it", "isn't it"], "a": "doesn't it" },
+      { "text": "You'll reply tonight, ___?", "opts": ["won't you", "will you", "don't you"], "a": "won't you" },
+      { "text": "You've never been to space, ___?", "opts": ["have you", "haven't you", "did you"], "a": "have you" },
+      { "text": "Echo was launched in 2056, ___?", "opts": ["wasn't it", "was it", "didn't it"], "a": "wasn't it" },
+      { "text": "It's a whole new world, ___?", "opts": ["isn't it", "is it", "doesn't it"], "a": "isn't it" }
+    ] },
+
+    { "type": "say", "who": "mei", "text": "Poster first. Life in 2100. Write it.", "tr": "Önce poster. 2100'de hayat. Yaz.", "expr": "smile" },
+    { "type": "journal", "title": "Poster · LIFE IN 2100", "hints": ["🛰️", "🌍", "🧑‍🚀"], "min": 3, "placeholder": "In 2100, if people …, they will … Robots will … Space colonies …",
+      "feedback": [
+        { "contains": ["if"], "who": "mei", "text": "If. A condition. A real poster.", "tr": "If. Bir koşul. Gerçek bir poster.", "expr": "excited" },
+        { "contains": ["will"], "who": "mei", "text": "Will. Good. Add an if-sentence?", "tr": "Will. Güzel. Bir if cümlesi ekle?", "expr": "smile" },
+        { "contains": [], "who": "mei", "text": "Try: In 2100, if people…, they will…", "tr": "Dene: In 2100, if people…, they will…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "observatory", "vars": { "ship": true }, "signal": 0.2 },
+    { "type": "say", "who": "yasemin", "text": "The dome transmitter. Say it to 2100.", "tr": "Kubbe vericisi. 2100'e söyle.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "This is a whole new world.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "omar", "text": "Open! Four schools, live. Action!", "tr": "Açıldı! Dört okul, canlı. Motor!", "expr": "excited" },
+    { "type": "interview", "title": "LIFE IN 2100 · four schools, live", "file": "2100", "questions": [
+      { "q": "If you could go to space, where would you go?", "who": "leo", "a": "Mars. If I train, I can land there.", "you": "And you? Where will you go?" },
+      { "q": "What will happen if the forests grow back?", "who": "mei", "a": "If they grow, the air gets cleaner.", "you": "And you? What will happen?" },
+      { "q": "What will you tell Echo?", "who": "omar", "a": "It's a small world. We heard you!", "you": "And you? What will you tell Echo?" }
+    ] },
+    { "type": "say", "who": "leo", "text": "Like being a man on the moon!", "tr": "Ayda yürümek gibi!", "expr": "excited" },
+
+    { "type": "bg", "preset": "pier_sky", "vars": { "star": true }, "signal": 0.3, "static": 0.2 },
+    { "type": "wait", "ms": 1200 },
+    { "type": "say", "who": "echo", "text": "Look up, {name}. Beyond Neptune.", "tr": "Yukarı bak, {name}. Neptün'ün ötesine." },
+    { "type": "orbit", "mode": "reveal", "ms": 1800, "hold": 2800, "planets": [
+      { "id": "mercury", "name": "Mercury", "color": "#b8b8b8", "size": 16 },
+      { "id": "venus", "name": "Venus", "color": "#e8c872", "size": 20 },
+      { "id": "earth", "name": "Earth", "color": "#3b6b8f", "size": 22 },
+      { "id": "mars", "name": "Mars", "color": "#c25a3b", "size": 18 },
+      { "id": "jupiter", "name": "Jupiter", "color": "#d9a677", "size": 34 },
+      { "id": "saturn", "name": "Saturn", "color": "#e8d2a8", "size": 30 },
+      { "id": "uranus", "name": "Uranus", "color": "#9ad0c0", "size": 24 },
+      { "id": "neptune", "name": "Neptune", "color": "#2a4ab0", "size": 24 }
+    ], "extra": { "icon": "📡", "label": "ECHO · 2100" } },
+    { "type": "bg", "preset": "pier_sky", "vars": { "star": true }, "signal": 0.95, "static": 0.5 },
+    { "type": "say", "who": "echo", "text": "Received, {name}. If you listen, I'll return.", "tr": "Alındı, {name}. Dinlersen geri dönerim." },
+    { "type": "say", "who": "echo", "text": "Goodbye, Year 10. A star is born.", "tr": "Hoşça kal, 10. sınıf. Bir yıldız doğdu." },
+    { "type": "note", "mode": "reveal", "title": "SIGNAL · end of season 2", "ms": 1000, "charMs": 40, "hold": 2400,
+      "lines": ["Anya, Marco, Yuki: in safe hands.", "Hana, 1996: thank you.", "Echo, 2100: still listening.", "Season 3: Year 11. Soon, {name}."] },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "End of season 2 · Next", "text": "Grade 11", "ms": 6000 }
+  ]
+}

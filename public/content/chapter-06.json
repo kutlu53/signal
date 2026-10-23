@@ -1,0 +1,153 @@
+{
+  "id": "06",
+  "title": "Night Market",
+  "theme": "Life in the City & Country",
+  "cefr": "B1.1",
+  "next": "07",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["questions with or (Spicy or sweet?)", "wh-questions about facts and processes (What are the ingredients? How do you make it?)", "simple present vs. present progressive"],
+  "vocab_key": ["street food", "food festival", "stall", "street vendor", "cuisine", "dish", "ingredients", "lahmacun", "kebab", "falafel", "pasta", "tacos", "sushi", "spicy", "sweet", "salty", "sour", "juicy", "creamy", "taste", "crack", "stir", "chop", "fry"],
+  "social": ["This tastes amazing!", "What a delicious meal!", "I'm full, but I can't stop eating!", "You're good at cooking!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "market", "vars": { "star": false }, "ms": 3800, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "market", "vars": { "star": true }, "ms": 3800, "signal": 0.3, "static": 0.4 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 6 · Night Market", "ms": 3400 },
+
+    { "type": "bg", "preset": "market", "vars": { "star": false } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "omar", "text": "Friday. Pier 7. Night Market!", "tr": "Cuma. İskele 7. Gece Pazarı!", "expr": "excited" },
+    { "type": "say", "who": "leo", "text": "Lanterns, stalls, street food. Wow.", "tr": "Fenerler, tezgâhlar, sokak yemeği. Vay.", "expr": "smile" },
+    { "type": "say", "who": "mei", "text": "What a delicious smell!", "tr": "Ne güzel bir koku!", "expr": "smile" },
+    { "type": "say", "who": "yasemin", "text": "Four stalls. Four marks. Four clues.", "tr": "Dört tezgâh. Dört işaret. Dört ipucu.", "expr": "think" },
+    { "type": "stalls", "who": "vendor", "hint": "tap a stall", "stalls": [
+      { "id": "lahmacun", "icon": "🫓", "name": "Stall 1 · Türkiye", "dish": "lahmacun", "line": "Lahmacun! Thin, hot, spicy. Try it!", "q": "Spicy or mild?", "clue": "Not the pier.", "options": [
+        { "text": "Spicy, please. I love spicy food.", "reply": { "text": "Great choice! Enjoy." } },
+        { "text": "Spicy or mild.", "ok": false, "reply": { "text": "Choose one! Spicy, or mild?" } },
+        { "text": "Yes.", "ok": false, "reply": { "text": "Yes? Spicy, or mild?" } }
+      ] },
+      { "id": "tacos", "icon": "🌮", "name": "Stall 2 · Mexico", "dish": "tacos", "line": "Tacos! Corn, beans, salsa. Fresh!", "q": "What are the ingredients?", "clue": "Not the cottage.", "options": [
+        { "text": "Corn, beans and salsa.", "reply": { "text": "Yes! This tastes amazing." } },
+        { "text": "Corn or beans?", "ok": false, "reply": { "text": "Both! Corn, beans, salsa." } },
+        { "text": "It is spicy.", "ok": false, "reply": { "text": "Ingredients, not taste!" } }
+      ] },
+      { "id": "falafel", "icon": "🧆", "name": "Stall 3 · Egypt", "dish": "falafel", "line": "Falafel! I'm frying it right now.", "q": "What is he doing now?", "clue": "Not the ground.", "options": [
+        { "text": "He's frying falafel now.", "reply": { "text": "Hot and crispy. Here!" } },
+        { "text": "He fries falafel every day.", "ok": false, "reply": { "text": "Now! Right now!" } },
+        { "text": "He frying falafel.", "ok": false, "reply": { "text": "He IS frying. Again?" } }
+      ] },
+      { "id": "pasta", "icon": "🍝", "name": "Stall 4 · Italy", "dish": "pasta", "line": "Pasta! Creamy sauce, or tomato sauce?", "q": "Creamy or tomato?", "clue": "Look up.", "options": [
+        { "text": "Tomato, please. It's juicy.", "reply": { "text": "Juicy and sweet. Buon appetito!" } },
+        { "text": "Creamy and tomato and cheese.", "ok": false, "reply": { "text": "One sauce! Creamy, or tomato?" } },
+        { "text": "No.", "ok": false, "reply": { "text": "No? Creamy, or tomato?" } }
+      ] }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Four clues. Not the pier. Not the cottage.", "tr": "Dört ipucu. İskele değil. Kır evi değil.", "expr": "worried" },
+    { "type": "say", "who": "omar", "text": "I'm full, but I can't stop eating!", "tr": "Doydum ama yemeyi bırakamıyorum!", "expr": "smile" },
+
+    { "type": "say", "who": "leo", "text": "Where is each dish from? Match.", "tr": "Her yemek nereden? Eşleştir.", "expr": "smile" },
+    { "type": "match", "title": "Dish · country", "who": "leo", "pairs": [
+      { "a": "🫓 lahmacun", "b": "Türkiye" },
+      { "a": "🌮 tacos", "b": "Mexico" },
+      { "a": "🧆 falafel", "b": "Egypt" },
+      { "a": "🍝 pasta", "b": "Italy" },
+      { "a": "🍣 sushi", "b": "Japan" },
+      { "a": "🍲 feijoada", "b": "Brazil" }
+    ] },
+    { "type": "say", "who": "mei", "text": "The programme. On the stage. Read it.", "tr": "Program. Sahnede. Oku.", "expr": "smile" },
+    { "type": "note", "title": "NIGHT MARKET · Pier 7 · Friday",
+      "text": "Stalls open at 20:00. Stall 1: lahmacun from Türkiye. Stall 2: tacos from Mexico. Stall 3: falafel from Egypt. Stall 4: pasta from Italy. Main stage: folk music at 21:00. Free tasting at 22:00. Fireworks at 23:00.",
+      "question": { "who": "omar", "text": "Free tasting at 21:00, right?", "tr": "Ücretsiz tadım 21:00'de, değil mi?", "expr": "wink", "options": [
+        { "text": "No. At 22:00.", "tr": "Hayır. 22:00'de." },
+        { "text": "Yes. At 21:00.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "21:00 is the music.", "tr": "21:00 müzik.", "expr": "think" } },
+        { "text": "At 23:00.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "That's the fireworks.", "tr": "O havai fişek.", "expr": "think" } }
+      ] } },
+
+    { "type": "say", "who": "yasemin", "text": "Menemen. My recipe. Watch and listen.", "tr": "Menemen. Benim tarifim. İzle ve dinle.", "expr": "smile" },
+    { "type": "sequence", "who": "yasemin", "listens": 3, "items": [
+      { "icon": "🍅", "text": "Chop the tomatoes.", "time": "1", "say": "First, chop the tomatoes." },
+      { "icon": "🥚", "text": "Crack the eggs.", "time": "2", "say": "Then, crack the eggs." },
+      { "icon": "🥄", "text": "Stir everything.", "time": "3", "say": "Stir everything." },
+      { "icon": "🧂", "text": "Add salt and pepper.", "time": "4", "say": "Add salt and pepper." },
+      { "icon": "🔥", "text": "Cook for five minutes.", "time": "5", "say": "Cook for five minutes." },
+      { "icon": "😋", "text": "Taste it!", "time": "6", "say": "Finally, taste it!" }
+    ] },
+    { "type": "say", "who": "omar", "text": "This tastes amazing! You're good at cooking!", "tr": "Harika bir tadı var! Yemek yapmada iyisin!", "expr": "excited" },
+
+    { "type": "say", "who": "leo", "text": "Choice, or information? Sort the questions.", "tr": "Seçim mi, bilgi mi? Soruları ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "or", "label": "… or …?" }, { "id": "wh", "label": "What · How · Where?" }],
+      "cards": [
+        { "text": "Spicy or sweet?", "g": "or" }, { "text": "Local or international?", "g": "or" }, { "text": "Tea or coffee?", "g": "or" }, { "text": "City or country?", "g": "or" },
+        { "text": "What are the ingredients?", "g": "wh" }, { "text": "How do you make it?", "g": "wh" }, { "text": "Where is the stall?", "g": "wh" }, { "text": "What is he cooking now?", "g": "wh" }
+      ],
+      "speed": [
+        { "text": "Is it spicy ___ sweet?", "opts": ["or", "and", "but"], "a": "or" },
+        { "text": "___ do you make it?", "opts": ["How", "Who", "Or"], "a": "How" },
+        { "text": "What ___ he cooking now?", "opts": ["is", "does", "do"], "a": "is" },
+        { "text": "She ___ falafel every day.", "opts": ["cooks", "is cooking", "cook"], "a": "cooks" },
+        { "text": "___ are the ingredients?", "opts": ["What", "How", "Or"], "a": "What" },
+        { "text": "They ___ eating now.", "opts": ["are", "is", "do"], "a": "are" }
+      ] },
+
+    { "type": "bg", "preset": "market", "signal": 0.4, "static": 0.5 },
+    { "type": "say", "who": "echo", "text": "…spicy… or… sweet…", "tr": "…acı… mı… tatlı… mı…" },
+    { "type": "broken_message", "text": "[What] are you eating? Spicy [or] sweet? This [tastes] amazing!",
+      "options": { "What": ["What", "Who", "Where"], "or": ["or", "and", "but"], "tastes": ["tastes", "taste", "tasting"] },
+      "hints": { "What": "❓", "Who": "👤", "Where": "🗺️", "or": "⚖️", "and": "➕", "but": "↩️", "tastes": "😋", "taste": "👅", "tasting": "⏳" } },
+    { "type": "choice", "who": "echo", "text": "City or country? Where am I?", "tr": "Şehir mi, köy mü? Neredeyim?", "options": [
+      { "text": "Not the ground. Up. The sky?", "tr": "Yer değil. Yukarı. Gökyüzü mü?" },
+      { "text": "The city.", "tr": "", "ok": false, "reply": { "text": "…not… the pier…", "tr": "…iskele… değil…" } },
+      { "text": "The country.", "tr": "", "ok": false, "reply": { "text": "…not… the cottage…", "tr": "…kır evi… değil…" } }
+    ] },
+    { "type": "bg", "preset": "market", "signal": 0.1, "static": 0.1 },
+    { "type": "say", "who": "mei", "text": "The city is loud. Listen anyway.", "tr": "Şehir gürültülü. Yine de dinle.", "expr": "think" },
+
+    { "type": "say", "who": "yasemin", "text": "The stage door. Locked. Say it.", "tr": "Sahne kapısı. Kilitli. Söyle.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "This food tastes amazing.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "omar", "text": "Open! A microphone. Record our festival.", "tr": "Açıldı! Bir mikrofon. Festivalimizi kaydet.", "expr": "excited" },
+    { "type": "interview", "title": "Food Festival · Episode 6", "file": "food", "questions": [
+      { "q": "What's your favourite dish?", "who": "leo", "a": "Feijoada. Beans and meat. From Brazil.", "you": "And you? Your favourite dish?" },
+      { "q": "Is it spicy or sweet?", "who": "mei", "a": "Sushi? Salty and fresh. Not spicy.", "you": "And your dish? Spicy or sweet?" },
+      { "q": "How do you make it?", "who": "omar", "a": "Falafel? Chickpeas, herbs. Fry it!", "you": "And yours? How do you make it?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "What a delicious meal!", "tr": "Ne lezzetli bir yemek!", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 6.", "tr": "Kaptan günlüğü. Altıncı gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Day 6", "hints": ["🏮", "🫓", "🌌"], "min": 2, "placeholder": "At the market I eat … It tastes …",
+      "feedback": [
+        { "contains": ["tastes"], "who": "yasemin", "text": "Tastes. Yes. Now I'm hungry.", "tr": "Tastes. Evet. Şimdi acıktım.", "expr": "excited" },
+        { "contains": ["eat"], "who": "yasemin", "text": "Good. How does it taste?", "tr": "Güzel. Tadı nasıl?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: I eat… It tastes…", "tr": "Dene: I eat… It tastes…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "pier_sky", "vars": { "star": false }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1200 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "Four clues", "ms": 1200, "charMs": 45, "hold": 2400,
+      "lines": ["Not the pier.", "Not the cottage.", "Not the ground.", "Look up, {name}."] },
+    { "type": "bg", "preset": "pier_sky", "vars": { "star": true }, "signal": 0.95, "static": 0.9 },
+    { "type": "say", "who": "echo", "text": "I'm not down here. Look up.", "tr": "Aşağıda değilim. Yukarı bak." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Warning", "ms": 5000 }
+  ]
+}

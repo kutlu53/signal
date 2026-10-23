@@ -1,0 +1,152 @@
+{
+  "id": "13",
+  "season": 2,
+  "title": "Catch the Bus",
+  "theme": "Life in the Neighbourhood, City & Social Life",
+  "cefr": "B1.2",
+  "next": "14",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["past progressive (I was going to school when…)", "simple past vs. past progressive", "question tags in the past"],
+  "vocab_key": ["on foot", "by bus", "by train", "ferry", "e-scooter", "taxi", "eco-friendly", "reliable", "time-consuming", "public transport", "to chill out", "to surf the Net", "to do Pilates", "first-aid kit", "bandage", "to check blood pressure", "to buy medicine", "pharmacy", "gym", "cinema"],
+  "social": ["I need to pop to the market!", "Let's catch the bus!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "bus_stop", "vars": { "bus": false }, "ms": 3400, "rain": 0.7, "signal": 0, "static": 0 },
+      { "preset": "bus_stop", "vars": { "bus": true }, "ms": 3200, "sfx": "burst" },
+      { "preset": "street", "ms": 3400, "signal": 0.3, "static": 0.3 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0, "rain": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 5 · Catch the Bus", "ms": 3600 },
+
+    { "type": "bg", "preset": "bus_stop", "vars": { "bus": false }, "rain": 0.6 },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "omar", "text": "Let's catch the bus! Town. Hana's old pharmacy.", "tr": "Otobüse binelim! Şehir. Hana'nın eski eczanesi.", "expr": "excited" },
+    { "type": "say", "who": "leo", "text": "I was waiting here when it rained.", "tr": "Yağmur başladığında burada bekliyordum.", "expr": "worried" },
+    { "type": "say", "who": "mei", "text": "Yuki said: Hana worked at a pharmacy.", "tr": "Yuki dedi ki: Hana bir eczanede çalışmış.", "expr": "think" },
+    { "type": "say", "who": "yasemin", "text": "Three signals. One city. Let's go.", "tr": "Üç sinyal. Bir şehir. Gidelim.", "expr": "smile" },
+    { "type": "bg", "preset": "bus_stop", "vars": { "bus": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "say", "who": "echo", "text": "…I was… waiting… when…", "tr": "…bekliyordum… -ken…" },
+    { "type": "broken_message", "text": "I was [waiting] for the bus when the radio [spoke]. It was [raining].",
+      "options": { "waiting": ["waiting", "wait", "waited"], "spoke": ["spoke", "speaking", "speaks"], "raining": ["raining", "rain", "rains"] },
+      "hints": { "waiting": "⏳", "wait": "✋", "waited": "⏮️", "spoke": "⚡", "speaking": "⏳", "speaks": "▶️", "raining": "🌧️", "rain": "💧", "rains": "▶️" } },
+    { "type": "choice", "who": "echo", "text": "What were you doing at 7:45?", "tr": "7:45'te ne yapıyordun?", "options": [
+      { "text": "I was waiting for the bus.", "tr": "Otobüsü bekliyordum." },
+      { "text": "I waiting for the bus.", "tr": "", "ok": false, "reply": { "text": "…I WAS waiting…", "tr": "…I WAS waiting…" } },
+      { "text": "I was wait for the bus.", "tr": "", "ok": false, "reply": { "text": "…waitING…", "tr": "…waitING…" } }
+    ] },
+    { "type": "bg", "preset": "bus_stop", "signal": 0, "static": 0 },
+
+    { "type": "say", "who": "leo", "text": "How do we get to town? Choose well.", "tr": "Şehre nasıl gideriz? İyi seç.", "expr": "think" },
+    { "type": "route", "who": "leo", "modes": [
+      { "id": "bus", "icon": "🚌", "name": "bus", "pro": "cheap, public transport", "con": "slow in traffic" },
+      { "id": "train", "icon": "🚆", "name": "train", "pro": "fast and reliable", "con": "station is far" },
+      { "id": "taxi", "icon": "🚕", "name": "taxi", "pro": "door to door", "con": "expensive" },
+      { "id": "scooter", "icon": "🛴", "name": "e-scooter", "pro": "eco-friendly, fun", "con": "not in the rain" },
+      { "id": "foot", "icon": "🚶", "name": "on foot", "pro": "free and healthy", "con": "time-consuming" },
+      { "id": "ferry", "icon": "⛴️", "name": "ferry", "pro": "a nice view", "con": "only across the river" }
+    ], "rounds": [
+      { "text": "It's raining. We have no money. Which one?", "options": [
+        { "id": "bus", "reply": "The bus. Cheap, and dry. Let's catch it!" }, { "id": "scooter", "ok": false, "reply": "In the rain? No!" }, { "id": "taxi", "ok": false, "reply": "We have no money." }, { "id": "train", "ok": false, "reply": "The station is too far." }, { "id": "foot", "ok": false, "reply": "Too slow in the rain." }, { "id": "ferry", "ok": false, "reply": "We're not crossing a river." }
+      ] },
+      { "text": "Omar is ill. Door to door, fast. Which one?", "options": [
+        { "id": "taxi", "reply": "A taxi. Expensive, but door to door." }, { "id": "foot", "ok": false, "reply": "He's ill! Not on foot." }, { "id": "bus", "ok": false, "reply": "Too slow for an ill friend." }, { "id": "scooter", "ok": false, "reply": "Not with a fever!" }, { "id": "train", "ok": false, "reply": "The station is far." }, { "id": "ferry", "ok": false, "reply": "No river here." }
+      ] },
+      { "text": "Sunny day. Eco-friendly and fun. Which one?", "options": [
+        { "id": "scooter", "reply": "E-scooter! Eco-friendly. Wear a helmet." }, { "id": "foot", "reply": "On foot. Free and healthy. Good too!" }, { "id": "taxi", "ok": false, "reply": "Not eco-friendly." }, { "id": "bus", "ok": false, "reply": "Public transport is okay, but fun?" }, { "id": "train", "ok": false, "reply": "Fast, but not fun." }, { "id": "ferry", "ok": false, "reply": "A view, but no river." }
+      ] }
+    ] },
+    { "type": "say", "who": "omar", "text": "Bus 7. Northgate to town. Go!", "tr": "7 numara. Northgate'ten şehre. Hadi!", "expr": "excited" },
+
+    { "type": "bg", "preset": "street", "rain": 0.2 },
+    { "type": "say", "who": "mei", "text": "The pharmacy. A sign in the window.", "tr": "Eczane. Vitrinde bir tabela.", "expr": "think" },
+    { "type": "note", "title": "OLD TOWN PHARMACY · since 1990",
+      "text": "Open 08:00 to 20:00, Monday to Saturday. We sell medicine, bandages and first-aid kits. Free blood pressure check on Fridays. Our first chemist, Hana Sato, worked here from 1996 to 1999. She was serving customers when the famous storm hit in 1997. Pop in!",
+      "question": { "who": "omar", "text": "Free blood pressure check on Mondays, isn't it?", "tr": "Ücretsiz tansiyon ölçümü pazartesi, değil mi?", "expr": "wink", "options": [
+        { "text": "No. On Fridays.", "tr": "Hayır. Cuma günleri." },
+        { "text": "Yes. On Mondays.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Read again. Fridays.", "tr": "Tekrar oku. Cuma.", "expr": "think" } },
+        { "text": "Every day.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Only Fridays.", "tr": "Sadece cuma.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "1997. The storm. She was serving customers.", "tr": "1997. Fırtına. Müşterilere hizmet ediyordu.", "expr": "surprised" },
+
+    { "type": "say", "who": "leo", "text": "Services and places. Match them.", "tr": "Hizmetler ve yerler. Eşleştir.", "expr": "smile" },
+    { "type": "match", "title": "Where do you go?", "who": "leo", "pairs": [
+      { "a": "💊 buy medicine", "b": "at the pharmacy" },
+      { "a": "🩺 check blood pressure", "b": "at the clinic" },
+      { "a": "🍿 buy popcorn", "b": "at the cinema" },
+      { "a": "🧘 do Pilates", "b": "at the gym" },
+      { "a": "☕ chill out", "b": "at the café" },
+      { "a": "🌐 surf the Net", "b": "at the library" }
+    ] },
+    { "type": "say", "who": "mei", "text": "Background, or event? Was doing, or did?", "tr": "Arka plan mı, olay mı? Was doing mi, did mi?", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "prog", "label": "was / were doing · background" }, { "id": "past", "label": "did · the event" }],
+      "cards": [
+        { "text": "I was waiting for the bus.", "g": "prog" }, { "text": "It was raining all morning.", "g": "prog" }, { "text": "Hana was serving customers.", "g": "prog" }, { "text": "We were crossing the road.", "g": "prog" },
+        { "text": "The radio spoke.", "g": "past" }, { "text": "The storm hit the town.", "g": "past" }, { "text": "The bus arrived at 7:50.", "g": "past" }, { "text": "Omar dropped his phone.", "g": "past" }
+      ],
+      "speed": [
+        { "text": "I ___ waiting when the bus came.", "opts": ["was", "were", "am"], "a": "was" },
+        { "text": "They ___ crossing the road at 8.", "opts": ["were", "was", "are"], "a": "were" },
+        { "text": "She was serving when the storm ___.", "opts": ["hit", "was hitting", "hits"], "a": "hit" },
+        { "text": "What ___ you doing at 7:45?", "opts": ["were", "did", "was"], "a": "were" },
+        { "text": "The bus ___ while we were talking.", "opts": ["arrived", "was arriving", "arrives"], "a": "arrived" },
+        { "text": "You came by bus, ___ you?", "opts": ["didn't", "weren't", "did"], "a": "didn't" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "Tags. The storm story. Listen.", "tr": "Kuyruklar. Fırtına hikâyesi. Dinle.", "expr": "think" },
+    { "type": "tags", "title": "Question tags · past progressive", "who": "echo", "items": [
+      { "text": "Hana was working here, ___?", "opts": ["wasn't she", "was she", "didn't she"], "a": "wasn't she" },
+      { "text": "It was raining that night, ___?", "opts": ["wasn't it", "was it", "didn't it"], "a": "wasn't it" },
+      { "text": "You came to town by bus, ___?", "opts": ["didn't you", "did you", "weren't you"], "a": "didn't you" },
+      { "text": "They weren't using e-scooters in 1997, ___?", "opts": ["were they", "weren't they", "did they"], "a": "were they" },
+      { "text": "The storm hit in 1997, ___?", "opts": ["didn't it", "did it", "wasn't it"], "a": "didn't it" }
+    ] },
+
+    { "type": "bg", "preset": "street", "signal": 0.2 },
+    { "type": "say", "who": "omar", "text": "The pharmacy's back door. Voice lock.", "tr": "Eczanenin arka kapısı. Ses kilidi.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "I need to pop to the market.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "mei", "text": "Open! Old photos. Hana and the storm.", "tr": "Açıldı! Eski fotoğraflar. Hana ve fırtına.", "expr": "surprised" },
+    { "type": "say", "who": "yasemin", "text": "Interview time. The chemist. Then us.", "tr": "Röportaj zamanı. Eczacı. Sonra biz.", "expr": "smile" },
+    { "type": "interview", "title": "Neighbourhood · interview a local", "file": "neighbourhood", "questions": [
+      { "q": "How do you get to work?", "who": "staff", "a": "By bus. It's cheap and reliable.", "you": "And you? How do you get to school?" },
+      { "q": "What were you doing when the storm hit?", "who": "leo", "a": "I was doing Pilates at the gym!", "you": "And you? What were you doing yesterday at 7?" },
+      { "q": "What's good about this neighbourhood?", "who": "omar", "a": "The café. The cinema. Chill out!", "you": "And your neighbourhood? What's good?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Great. I need to pop to the market!", "tr": "Harika. Markete uğramam lazım!", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 5.", "tr": "Kaptan günlüğü. Beşinci gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Season 2 · Day 5", "hints": ["🚌", "💊", "🌧️"], "min": 2, "placeholder": "I was … when … We went to town by …",
+      "feedback": [
+        { "contains": ["was"], "who": "yasemin", "text": "Was doing. Background. Perfect.", "tr": "Was doing. Arka plan. Mükemmel.", "expr": "excited" },
+        { "contains": ["by"], "who": "yasemin", "text": "By bus? Good. What were you doing?", "tr": "Otobüsle mi? Güzel. Ne yapıyordun?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: I was… when…", "tr": "Dene: I was… when…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "street", "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "Photo · Old Town Pharmacy · 1997", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["Hana was serving a customer.", "The customer was holding a radio.", "On the back: \"Pier 7. Friday. 20:00.\"", "The customer looks like… Echo?"] },
+    { "type": "bg", "preset": "street", "signal": 0.95, "static": 0.8 },
+    { "type": "say", "who": "echo", "text": "I was there. In 1997. Keep going.", "tr": "Oradaydım. 1997'de. Devam et." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Grab a Bite", "ms": 5000 }
+  ]
+}

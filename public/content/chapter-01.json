@@ -1,0 +1,145 @@
+{
+  "id": "01",
+  "title": "Static",
+  "theme": "School Life",
+  "cefr": "B1.1",
+  "next": "02",
+  "outcome_tags": ["L1", "L2", "L3", "R3", "S1", "S2", "S3", "S4", "W3", "W5", "W7", "P1", "V1", "G1"],
+  "grammar": ["to be (am/is/are)", "can (ability)"],
+  "vocab_key": ["country", "nationality", "language", "from", "speak", "hear", "attic", "signal", "new"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "gate_night", "ms": 7000, "rain": 1, "signal": 0 },
+      { "preset": "gate_night", "ms": 3000, "rain": 1, "signal": 0.35, "static": 0.3 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 1 · Static", "ms": 3400 },
+
+    { "type": "bg", "preset": "desk", "rain": 0.4 },
+    { "type": "say", "who": "staff", "text": "Welcome to Northgate International School.", "tr": "Northgate Uluslararası Okulu'na hoş geldin." },
+    { "type": "name_entry", "who": "staff", "text": "Your name, please?", "tr": "Adın?" },
+    { "type": "say", "who": "staff", "text": "Nice to meet you, {name}.", "tr": "Memnun oldum, {name}.", "expr": "smile" },
+    { "type": "flag_pick", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+    { "type": "say", "who": "staff", "text": "Great. Room 12, second floor.", "tr": "Harika. Oda 12, ikinci kat." },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.6 },
+    { "type": "say", "who": "omar", "text": "Hi! I'm Omar. I'm from Egypt.", "tr": "Selam! Ben Omar. Mısırlıyım.", "expr": "smile" },
+    { "type": "choice", "who": "omar", "text": "And you?", "tr": "Ya sen?", "options": [
+      { "text": "I'm {name}. I'm from {country}.", "tr": "Ben {name}. {country}'den geliyorum." },
+      { "text": "I is {name}.", "tr": "", "ok": false, "reply": { "text": "I… am? Try again.", "tr": "I… am? Tekrar dene.", "expr": "think" } },
+      { "text": "Yes.", "tr": "Evet.", "ok": false, "reply": { "text": "Yes? Your name?", "tr": "Evet? Adın?", "expr": "surprised" } }
+    ] },
+    { "type": "say", "who": "omar", "text": "Cool. Welcome.", "tr": "Süper. Hoş geldin.", "expr": "smile" },
+    { "type": "bg", "preset": "dorm", "signal": 0.3, "static": 0.5 },
+    { "type": "say", "who": "omar", "text": "Shh. Can you hear that?", "tr": "Şşş. Duyuyor musun?", "expr": "surprised" },
+    { "type": "say", "who": "omar", "text": "It's from the attic.", "tr": "Çatı katından geliyor.", "expr": "worried" },
+
+    { "type": "bg", "preset": "attic", "signal": 0.2, "static": 0.4, "rain": 0.3 },
+    { "type": "say", "who": "echo", "text": "…is… from… where… are…", "tr": "…dir… -den… nere… -sin…" },
+    { "type": "broken_message", "text": "Hello? Who [is] there? I am [from] far away. [Where] are you from?",
+      "options": { "is": ["is", "am", "are"], "from": ["from", "to", "in"], "Where": ["Where", "What", "Who"] },
+      "hints": { "is": "👤", "am": "🙋", "are": "👥", "from": "📍", "to": "➡️", "in": "📦", "Where": "🗺️", "What": "❓", "Who": "👤" } },
+    { "type": "choice", "who": "echo", "text": "Where are you from?", "tr": "Nerelisin?", "options": [
+      { "text": "I'm from {country}.", "tr": "{country}'den geliyorum." },
+      { "text": "I from {country}.", "tr": "", "ok": false, "reply": { "text": "…I… am… from…", "tr": "…I… am… from…" } },
+      { "text": "From.", "tr": "", "ok": false, "reply": { "text": "…full… sentence…", "tr": "…tam… cümle…" } }
+    ] },
+    { "type": "bg", "preset": "attic", "signal": 0.6 },
+    { "type": "say", "who": "echo", "text": "I can hear you.", "tr": "Seni duyabiliyorum." },
+
+    { "type": "bg", "preset": "attic", "signal": 0.2, "static": 0.1 },
+    { "type": "say", "who": "yasemin", "text": "Who's there? Oh. Hi!", "tr": "Kim var orada? Aa. Selam!", "expr": "surprised" },
+    { "type": "say", "who": "yasemin", "text": "I'm Yasemin. I'm from Türkiye.", "tr": "Ben Yasemin. Türkiyeliyim.", "expr": "smile" },
+    { "type": "choice", "who": "yasemin", "text": "Who are you?", "tr": "Sen kimsin?", "options": [
+      { "text": "I'm {name}. I'm from {country}.", "tr": "Ben {name}. {country}'den geliyorum." },
+      { "text": "You're {name}.", "tr": "", "ok": false, "reply": { "text": "No, I'm Yasemin. You are…?", "tr": "Hayır, ben Yasemin. Sen…?", "expr": "wink" } },
+      { "text": "{name} from {country}.", "tr": "", "ok": false, "reply": { "text": "Say: I'm {name}.", "tr": "De ki: I'm {name}.", "expr": "smile" } }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Listen! It can speak four languages!", "tr": "Dinle! Dört dil konuşabiliyor!", "expr": "excited" },
+    { "type": "bg", "preset": "attic", "signal": 0.7, "static": 0.3 },
+    { "type": "say", "who": "echo", "text": "Merhaba. Hello. Hola. Bonjour.", "tr": "" },
+    { "type": "bg", "preset": "attic", "signal": 0.2, "static": 0.1 },
+    { "type": "say", "who": "yasemin", "text": "Am, is, are… can. There's a pattern.", "tr": "Am, is, are… can. Bir örüntü var.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "be", "label": "am · is · are" }, { "id": "can", "label": "can" }],
+      "cards": [
+        { "text": "I'm Yasemin.", "g": "be" }, { "text": "It's from the attic.", "g": "be" }, { "text": "You're new here.", "g": "be" },
+        { "text": "It can speak four languages.", "g": "can" }, { "text": "I can hear you.", "g": "can" }, { "text": "Can you hear that?", "g": "can" }
+      ],
+      "speed": [
+        { "text": "I ___ from {country}.", "opts": ["am", "is", "can"], "a": "am" },
+        { "text": "Yasemin ___ from Türkiye.", "opts": ["is", "am", "are"], "a": "is" },
+        { "text": "We ___ friends.", "opts": ["are", "is", "can"], "a": "are" },
+        { "text": "It ___ speak four languages.", "opts": ["can", "is", "are"], "a": "can" },
+        { "text": "Omar and Leo ___ students.", "opts": ["are", "am", "is"], "a": "are" },
+        { "text": "___ you hear it?", "opts": ["Can", "Is", "Am"], "a": "Can" }
+      ] },
+    { "type": "say", "who": "yasemin", "text": "You've got it. Tomorrow, meet the others.", "tr": "Kaptın. Yarın diğerleriyle tanış.", "expr": "smile" },
+
+    { "type": "bg", "preset": "corridor", "rain": 0, "static": 0, "signal": 0 },
+    { "type": "say", "who": "leo", "text": "Morning! I'm Leo. I'm from Brazil.", "tr": "Günaydın! Ben Leo. Brezilyalıyım.", "expr": "smile" },
+    { "type": "say", "who": "leo", "text": "I can speak Portuguese and English.", "tr": "Portekizce ve İngilizce konuşabiliyorum." },
+    { "type": "say", "who": "mei", "text": "Hi. I'm Mei. From Japan.", "tr": "Selam. Ben Mei. Japonya'dan.", "expr": "smile" },
+    { "type": "say", "who": "mei", "text": "I can draw. I don't talk much.", "tr": "Çizebiliyorum. Pek konuşmam." },
+    { "type": "bg", "preset": "common" },
+    { "type": "say", "who": "omar", "text": "Leo is from Argentina!", "tr": "Leo Arjantinli!", "expr": "wink" },
+    { "type": "choice", "who": "leo", "text": "What? {name}, help!", "tr": "Ne? {name}, yardım et!", "expr": "surprised", "options": [
+      { "text": "No. Leo is from Brazil.", "tr": "Hayır. Leo Brezilyalı." },
+      { "text": "Yes, Leo is from Argentina.", "tr": "", "ok": false, "reply": { "text": "Argentina? No! Listen again.", "tr": "Arjantin? Hayır! Tekrar dinle.", "expr": "worried" } },
+      { "text": "Mei is from Argentina.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Japan. I'm from Japan.", "tr": "Japonya. Ben Japonya'danım.", "expr": "think" } }
+    ] },
+    { "type": "say", "who": "omar", "text": "Okay, okay. Brazil!", "tr": "Tamam, tamam. Brezilya!", "expr": "smile" },
+    { "type": "choice", "who": "yasemin", "text": "And what can Leo speak?", "tr": "Peki Leo hangi dilleri konuşabiliyor?", "options": [
+      { "text": "Portuguese and English.", "tr": "Portekizce ve İngilizce." },
+      { "text": "Spanish.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Spanish? No. Portuguese!", "tr": "İspanyolca? Hayır. Portekizce!", "expr": "worried" } },
+      { "text": "Japanese.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "That's Mei!", "tr": "O Mei!", "expr": "surprised" } }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Tonight. The attic. All of us.", "tr": "Bu gece. Çatı katı. Hepimiz.", "expr": "excited" },
+
+    { "type": "bg", "preset": "rooftop_door", "rain": 0.3, "signal": 0 },
+    { "type": "say", "who": "yasemin", "text": "It's locked. A voice lock.", "tr": "Kilitli. Ses kilidi.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "I can hear you.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "yasemin", "text": "It's open!", "tr": "Açıldı!", "expr": "excited" },
+
+    { "type": "bg", "preset": "attic", "signal": 0.25, "static": 0.15, "rain": 0.3 },
+    { "type": "say", "who": "yasemin", "text": "Let's record an interview. For the signal.", "tr": "Bir röportaj kaydedelim. Sinyal için.", "expr": "smile" },
+    { "type": "say", "who": "yasemin", "text": "Ask us. Then answer.", "tr": "Bize sor. Sonra sen cevapla." },
+    { "type": "interview", "questions": [
+      { "q": "Where are you from?", "who": "yasemin", "a": "I'm from Türkiye.", "you": "And you? Where are you from?" },
+      { "q": "What's your nationality?", "who": "leo", "a": "I'm Brazilian.", "you": "And you? What's your nationality?" },
+      { "q": "What languages can you speak?", "who": "mei", "a": "I can speak Japanese and English.", "you": "And you? What can you speak?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Perfect. International School Day, here we come.", "tr": "Mükemmel. Uluslararası Okul Günü, geliyoruz.", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.5, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Write it down. Captain's log.", "tr": "Yaz. Kaptan günlüğü.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Day 1", "hints": ["📻", "👧🏽", "{flag}"], "min": 2, "placeholder": "I'm … I'm from … I can …",
+      "feedback": [
+        { "contains": ["from", "can"], "who": "yasemin", "text": "Great. From, and can. All there.", "tr": "Harika. From ve can. Hepsi var.", "expr": "excited" },
+        { "contains": ["from"], "who": "yasemin", "text": "Nice. Add one thing you can do?", "tr": "Güzel. Yapabildiğin bir şey ekle?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: I'm from… I can…", "tr": "Dene: I'm from… I can…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "attic", "signal": 0.5, "static": 0.5, "rain": 0.2 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "bg", "preset": "attic", "signal": 0.95, "static": 0.9 },
+    { "type": "say", "who": "echo", "text": "{name}. I can hear you.", "tr": "{name}. Seni duyabiliyorum." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "07:45", "ms": 5000 }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "10",
+  "season": 2,
+  "title": "Mind Map",
+  "theme": "Classroom Life & Learning",
+  "cefr": "B1.2",
+  "next": "11",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["will vs. be going to", "should / ought to, must / have to", "question tags", "can / might for requests and permission", "possessive pronouns and 's", "reflexive pronouns"],
+  "vocab_key": ["role-play", "brainstorming", "to summarise", "to analyse", "note-taking", "mind mapping", "to visualise", "keyboard", "homepage", "artificial intelligence", "to upload", "to log in", "password", "a quiz", "a presentation"],
+  "social": ["Don't sleep in!", "Let's keep our heads down to finish our homework!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "dorm_morning", "vars": { "clock": "07:20", "alarm": true }, "sfx": "alarm", "ms": 3000, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "classroom", "vars": { "clock": "08:05", "alarm": false }, "ms": 3200 },
+      { "preset": "lab", "vars": { "clock": "16:00", "screen": "NORTHGATE · LOG IN" }, "ms": 3800, "signal": 0.35, "static": 0.4 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 2 · Mind Map", "ms": 3600 },
+
+    { "type": "bg", "preset": "classroom", "vars": { "clock": "08:10" } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "omar", "text": "Don't sleep in! Leo was late.", "tr": "Uyuyakalma! Leo geç kaldı.", "expr": "wink" },
+    { "type": "say", "who": "leo", "text": "I'm going to set two alarms.", "tr": "İki alarm kuracağım.", "expr": "worried" },
+    { "type": "say", "who": "yasemin", "text": "Anya's school. We need a plan.", "tr": "Anya'nın okulu. Bir plana ihtiyacımız var.", "expr": "think" },
+    { "type": "say", "who": "mei", "text": "I'll draw a mind map. My way.", "tr": "Zihin haritası çizeceğim. Benim yöntemim.", "expr": "smile" },
+    { "type": "say", "who": "yasemin", "text": "Everyone learns differently. Sort the words.", "tr": "Herkes farklı öğrenir. Kelimeleri ayır.", "expr": "smile" },
+    { "type": "mindmap", "who": "mei", "center": "LEARNING",
+      "branches": [{ "id": "act", "label": "class activities" }, { "id": "style", "label": "learning styles" }, { "id": "tech", "label": "technology" }],
+      "cards": [
+        { "text": "role-play", "b": "act" }, { "text": "brainstorming", "b": "act" }, { "text": "a quiz", "b": "act" }, { "text": "a presentation", "b": "act" },
+        { "text": "note-taking", "b": "style" }, { "text": "mind mapping", "b": "style" }, { "text": "visualising", "b": "style" }, { "text": "reading aloud", "b": "style" },
+        { "text": "keyboard", "b": "tech" }, { "text": "homepage", "b": "tech" }, { "text": "to upload", "b": "tech" }, { "text": "artificial intelligence", "b": "tech" }
+      ] },
+    { "type": "say", "who": "mei", "text": "Leo takes notes. Omar does role-plays.", "tr": "Leo not alır. Omar rol oyunu yapar.", "expr": "smile" },
+    { "type": "say", "who": "omar", "text": "And I'm going to play Anya!", "tr": "Ve ben Anya'yı oynayacağım!", "expr": "excited" },
+
+    { "type": "bg", "preset": "lab", "vars": { "clock": "16:05", "screen": "NORTHGATE · LOG IN" } },
+    { "type": "say", "who": "leo", "text": "The lab. The homepage. Read the rules.", "tr": "Laboratuvar. Ana sayfa. Kuralları oku.", "expr": "think" },
+    { "type": "note", "title": "NORTHGATE HOMEPAGE · Year 10",
+      "text": "Students must log in with their school ID. Upload your homework before 20:00. The coding club's AI tutor is open to Year 10 after 16:00. You mustn't share your password with anyone. Library computers close at 18:00. Keep your heads down!",
+      "question": { "who": "omar", "text": "Upload before 22:00, don't we?", "tr": "22:00'den önce yükleriz, değil mi?", "expr": "wink", "options": [
+        { "text": "No. Before 20:00.", "tr": "Hayır. 20:00'den önce." },
+        { "text": "Yes. Before 22:00.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Read again. 20:00.", "tr": "Tekrar oku. 20:00.", "expr": "think" } },
+        { "text": "Before 18:00.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "That's the library closing.", "tr": "O kütüphanenin kapanışı.", "expr": "think" } }
+      ] } },
+    { "type": "choice", "who": "mei", "text": "Can I use your laptop, {name}?", "tr": "Laptopunu kullanabilir miyim, {name}?", "expr": "think", "options": [
+      { "text": "Sure, you can. It's mine, be careful.", "tr": "Tabii. Benimki, dikkat et.", "reply": { "who": "mei", "text": "Thanks. I'll log out after.", "tr": "Sağ ol. Sonra çıkış yaparım.", "expr": "smile" } },
+      { "text": "Yes, you can't.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Can, or can't?", "tr": "Can mi, can't mi?", "expr": "think" } },
+      { "text": "Mine is me.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "It's mine. Possessive pronoun!", "tr": "It's mine. İyelik zamiri!", "expr": "think" } }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Match the tech words. Then we log in.", "tr": "Teknoloji kelimelerini eşleştir. Sonra giriş yaparız.", "expr": "smile" },
+    { "type": "match", "title": "Tech words", "who": "yasemin", "pairs": [
+      { "a": "🔑 log in", "b": "enter your ID and password" },
+      { "a": "⬆️ upload", "b": "send a file to the site" },
+      { "a": "🏠 homepage", "b": "the first page of a website" },
+      { "a": "⌨️ keyboard", "b": "you type with it" },
+      { "a": "🤖 AI tutor", "b": "a program that helps you learn" },
+      { "a": "🔒 password", "b": "secret. Never share it." }
+    ] },
+
+    { "type": "bg", "preset": "lab", "vars": { "screen": "TUTOR · ONLINE" }, "signal": 0.4, "static": 0.4 },
+    { "type": "say", "who": "echo", "text": "…tutor… online… I'm going to help…", "tr": "…tutor… çevrimiçi… yardım edeceğim…" },
+    { "type": "broken_message", "text": "I'm [going] to send a map. You [should] log in tonight. [Can] I trust you?",
+      "options": { "going": ["going", "go", "will"], "should": ["should", "must not", "might"], "Can": ["Can", "Must", "Will"] },
+      "hints": { "going": "📅", "go": "🚶", "will": "🔮", "should": "💡", "must not": "🚫", "might": "🎲", "Can": "🙋", "Must": "❗", "Will": "🔮" } },
+    { "type": "choice", "who": "echo", "text": "Will you help Anya?", "tr": "Anya'ya yardım edecek misin?", "options": [
+      { "text": "Yes, we will. We're going to find her.", "tr": "Evet. Onu bulacağız." },
+      { "text": "Yes, we going to.", "tr": "", "ok": false, "reply": { "text": "…we ARE going to…", "tr": "…we ARE going to…" } },
+      { "text": "Yes, we will to.", "tr": "", "ok": false, "reply": { "text": "…we will… no \"to\"…", "tr": "…we will… \"to\" yok…" } }
+    ] },
+    { "type": "bg", "preset": "lab", "signal": 0.1, "static": 0 },
+    { "type": "say", "who": "leo", "text": "Decision now, or a plan? Sort them.", "tr": "Anlık karar mı, plan mı? Ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "will", "label": "will · decision now / prediction" }, { "id": "going", "label": "be going to · a plan" }],
+      "cards": [
+        { "text": "Phone rings. I'll answer it.", "g": "will" }, { "text": "It will snow in Siberia.", "g": "will" }, { "text": "Don't worry, I'll help you.", "g": "will" }, { "text": "The tutor will find it, I think.", "g": "will" },
+        { "text": "We're going to log in tonight.", "g": "going" }, { "text": "Mei is going to draw a map.", "g": "going" }, { "text": "I'm going to study at 8.", "g": "going" }, { "text": "They're going to meet Anya.", "g": "going" }
+      ],
+      "speed": [
+        { "text": "The phone rings. I ___ answer it.", "opts": ["will", "am going to", "going"], "a": "will" },
+        { "text": "Plan: we ___ study at 8 tonight.", "opts": ["are going to", "will", "going to"], "a": "are going to" },
+        { "text": "You ___ take notes. It helps.", "opts": ["should", "mustn't", "might not"], "a": "should" },
+        { "text": "You ___ share your password.", "opts": ["mustn't", "should", "ought to"], "a": "mustn't" },
+        { "text": "This laptop is ___.", "opts": ["mine", "my", "me"], "a": "mine" },
+        { "text": "They taught ___ to code.", "opts": ["themselves", "them", "their"], "a": "themselves" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "Tags again. The tutor likes them.", "tr": "Yine soru kuyrukları. Tutor seviyor.", "expr": "think" },
+    { "type": "tags", "title": "Question tags", "who": "echo", "items": [
+      { "text": "We should log in now, ___?", "opts": ["shouldn't we", "should we", "don't we"], "a": "shouldn't we" },
+      { "text": "You'll help me, ___?", "opts": ["won't you", "will you", "don't you"], "a": "won't you" },
+      { "text": "It's Mei's laptop, ___?", "opts": ["isn't it", "is it", "doesn't it"], "a": "isn't it" },
+      { "text": "They're going to meet, ___?", "opts": ["aren't they", "are they", "don't they"], "a": "aren't they" },
+      { "text": "I can use your keyboard, ___?", "opts": ["can't I", "can I", "don't I"], "a": "can't I" },
+      { "text": "We must keep our heads down, ___?", "opts": ["mustn't we", "must we", "don't we"], "a": "mustn't we" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Let's keep our heads down. Homework!", "tr": "Kafamızı kaldırmadan çalışalım. Ödev!", "expr": "smile" },
+
+    { "type": "bg", "preset": "lab", "vars": { "screen": "UPLOAD · LOCKED" }, "signal": 0.2 },
+    { "type": "say", "who": "mei", "text": "Upload is locked. A voice password.", "tr": "Yükleme kilitli. Sesli şifre.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "Let's keep our heads down.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "leo", "text": "Unlocked! Record our project. Upload it.", "tr": "Açıldı! Projemizi kaydet. Yükle.", "expr": "excited" },
+    { "type": "interview", "title": "Classroom Life & Learning · project", "file": "learning", "questions": [
+      { "q": "How do you learn best?", "who": "leo", "a": "I take notes. Then I summarise them.", "you": "And you? How do you learn best?" },
+      { "q": "What are you going to do tonight?", "who": "mei", "a": "I'm going to draw a mind map.", "you": "And you? What are you going to do?" },
+      { "q": "Can we use AI in class?", "who": "omar", "a": "Yes, but we must check it ourselves.", "you": "And you? Should we use AI?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Uploaded! Before 20:00. Great job.", "tr": "Yüklendi! 20:00'den önce. Harika.", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 2.", "tr": "Kaptan günlüğü. İkinci gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Season 2 · Day 2", "hints": ["🧠", "💻", "📻"], "min": 2, "placeholder": "I learn best by … Tonight I'm going to …",
+      "feedback": [
+        { "contains": ["going to"], "who": "yasemin", "text": "A plan. Going to. Perfect.", "tr": "Bir plan. Going to. Mükemmel.", "expr": "excited" },
+        { "contains": ["learn"], "who": "yasemin", "text": "Good. What are you going to do tonight?", "tr": "Güzel. Bu gece ne yapacaksın?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: I learn best by… I'm going to…", "tr": "Dene: I learn best by… I'm going to…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "lab", "vars": { "screen": "TUTOR · SEARCHING…" }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "TUTOR · search complete", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["Signal 2: Italian. 104.5 FM.", "A school by a lake. Rowing club.", "Student: Marco, Year 10.", "He's going to call you, {name}."] },
+    { "type": "bg", "preset": "lab", "vars": { "screen": "INCOMING CALL · MARCO" }, "signal": 0.95, "static": 0.8 },
+    { "type": "say", "who": "echo", "text": "Marco is calling. You'll answer, won't you?", "tr": "Marco arıyor. Açacaksın, değil mi?" },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "In the Pink", "ms": 5000 }
+  ]
+}

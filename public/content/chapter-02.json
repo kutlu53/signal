@@ -1,0 +1,161 @@
+{
+  "id": "02",
+  "title": "07:45",
+  "theme": "Classroom Life",
+  "cefr": "B1.1",
+  "next": "03",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["simple present (I/you/we/they + verb; he/she/it + verb-s)", "adverbs of frequency: always, often, sometimes, never"],
+  "vocab_key": ["wake up", "make the bed", "have breakfast", "walk to school", "check messages", "attend classes", "take notes", "have a break", "every day", "always", "never", "sometimes", "timetable", "registration"],
+  "social": ["Bright and early!", "Hit the books!", "Work hard, play later!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "dorm_morning", "vars": { "clock": "06:29", "alarm": false }, "ms": 3200, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "dorm_morning", "vars": { "clock": "06:30", "alarm": true }, "sfx": "alarm", "ms": 2600 },
+      { "preset": "corridor", "vars": { "alarm": false }, "ms": 2800 },
+      { "preset": "classroom", "vars": { "clock": "07:44" }, "ms": 2600 },
+      { "preset": "classroom", "vars": { "clock": "07:45" }, "ms": 3600, "signal": 0.45, "static": 0.6 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 2 · 07:45", "ms": 3400 },
+
+    { "type": "bg", "preset": "classroom", "vars": { "clock": "07:50" } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "leo", "text": "Bright and early! Same time, every day.", "tr": "Erkenden! Her gün aynı saat.", "expr": "smile" },
+    { "type": "say", "who": "leo", "text": "I always wake up at 6:30.", "tr": "Her zaman 6:30'da uyanırım." },
+    { "type": "say", "who": "mei", "text": "Leo never sleeps late.", "tr": "Leo asla geç uyumaz.", "expr": "smile" },
+    { "type": "say", "who": "omar", "text": "I sometimes sleep in class.", "tr": "Ben bazen derste uyurum.", "expr": "wink" },
+    { "type": "bg", "preset": "classroom", "signal": 0.3, "static": 0.5 },
+    { "type": "say", "who": "yasemin", "text": "Shh. The radio. Again.", "tr": "Şşş. Radyo. Yine.", "expr": "surprised" },
+    { "type": "choice", "who": "yasemin", "text": "When does it crackle?", "tr": "Ne zaman cızırdıyor?", "options": [
+      { "text": "Every morning. Same time.", "tr": "Her sabah. Aynı saat." },
+      { "text": "Never.", "tr": "", "ok": false, "reply": { "who": "omar", "text": "Never? Listen! Now!", "tr": "Asla mı? Dinle! Şimdi!", "expr": "surprised" } },
+      { "text": "On Sundays.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Today is Monday.", "tr": "Bugün pazartesi.", "expr": "think" } }
+    ] },
+    { "type": "bg", "preset": "classroom", "signal": 0, "static": 0 },
+
+    { "type": "say", "who": "yasemin", "text": "Leo's day is a clock. Check it.", "tr": "Leo'nun günü saat gibi. Kontrol et.", "expr": "think" },
+    { "type": "say", "who": "leo", "text": "Okay. Listen carefully.", "tr": "Tamam. Dikkatle dinle." },
+    { "type": "sequence", "who": "leo", "listens": 3, "items": [
+      { "icon": "⏰", "text": "I wake up.", "time": "06:30", "say": "I wake up at six thirty." },
+      { "icon": "🛏️", "text": "I make my bed.", "time": "06:40", "say": "I make my bed at six forty." },
+      { "icon": "🥣", "text": "I have breakfast.", "time": "07:00", "say": "I have breakfast at seven." },
+      { "icon": "🚶", "text": "I walk to school.", "time": "07:20", "say": "I walk to school at seven twenty." },
+      { "icon": "📱", "text": "I check my messages.", "time": "07:45", "say": "I check my messages at seven forty-five." },
+      { "icon": "📚", "text": "I attend classes.", "time": "08:00", "say": "I attend classes at eight." }
+    ] },
+    { "type": "say", "who": "mei", "text": "07:45. He checks his phone.", "tr": "07:45. Telefonuna bakıyor.", "expr": "think" },
+    { "type": "say", "who": "yasemin", "text": "And the radio crackles. Every day.", "tr": "Ve radyo cızırdıyor. Her gün.", "expr": "surprised" },
+    { "type": "say", "who": "leo", "text": "My phone? It's just messages!", "tr": "Telefonum mu? Sadece mesajlar!", "expr": "worried" },
+
+    { "type": "say", "who": "yasemin", "text": "I wake up. He wakes up. Hear it?", "tr": "I wake up. He wakes up. Duydun mu?", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "one", "label": "I · you · we · they" }, { "id": "s", "label": "he · she · it  +s" }],
+      "cards": [
+        { "text": "I wake up at 6:30.", "g": "one" }, { "text": "We walk to school.", "g": "one" }, { "text": "They have a break at 10.", "g": "one" }, { "text": "You take notes.", "g": "one" },
+        { "text": "Leo wakes up at 6:30.", "g": "s" }, { "text": "Mei draws every day.", "g": "s" }, { "text": "It crackles at 7:45.", "g": "s" }, { "text": "Omar never sleeps early.", "g": "s" }
+      ],
+      "speed": [
+        { "text": "Leo ___ up at 6:30.", "opts": ["wakes", "wake", "waking"], "a": "wakes" },
+        { "text": "I ___ to school.", "opts": ["walk", "walks", "walking"], "a": "walk" },
+        { "text": "The radio ___ every day.", "opts": ["crackles", "crackle", "crackling"], "a": "crackles" },
+        { "text": "We ___ a break at 10.", "opts": ["have", "has", "having"], "a": "have" },
+        { "text": "Mei ___ in class.", "opts": ["draws", "draw", "drawing"], "a": "draws" },
+        { "text": "They ___ notes.", "opts": ["take", "takes", "taking"], "a": "take" }
+      ] },
+    { "type": "say", "who": "yasemin", "text": "Got it. Now, the timetable.", "tr": "Oldu. Şimdi ders programı.", "expr": "smile" },
+
+    { "type": "bg", "preset": "common" },
+    { "type": "say", "who": "omar", "text": "Reception gave me this note.", "tr": "Resepsiyon bana bu notu verdi.", "expr": "smile" },
+    { "type": "note", "title": "Northgate · Timetable note",
+      "text": "Classes start at 08:00 every day. There are six lessons. Students have a break at 10:30. Lesson 6 ends at 14:30. Registration is at 07:45. Please be on time!",
+      "question": { "who": "omar", "text": "Lessons start at 09:00, right?", "tr": "Dersler 9'da başlıyor, değil mi?", "expr": "wink", "options": [
+        { "text": "No. They start at 08:00.", "tr": "Hayır. 8'de başlıyor." },
+        { "text": "Yes. At 09:00.", "tr": "", "ok": false, "reply": { "who": "yasemin", "text": "Read it again. Slowly.", "tr": "Tekrar oku. Yavaşça.", "expr": "think" } },
+        { "text": "At 10:30.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "That's the break.", "tr": "O teneffüs.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "omar", "text": "Okay, okay. 08:00!", "tr": "Tamam, tamam. 08:00!", "expr": "smile" },
+    { "type": "say", "who": "yasemin", "text": "And 07:45? Registration. Every day.", "tr": "Peki 07:45? Yoklama. Her gün.", "expr": "think" },
+
+    { "type": "bg", "preset": "classroom", "vars": { "clock": "10:35" } },
+    { "type": "say", "who": "yasemin", "text": "The board. Tap. Listen. Find it.", "tr": "Pano. Dokun. Dinle. Bul.", "expr": "excited" },
+    { "type": "signal_grid", "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "signalRows": [0], "hours": [
+      { "time": "07:45", "lessons": ["Registration", "Registration", "Registration", "Registration", "Registration"] },
+      { "time": "08:00", "lessons": ["English", "Maths", "Science", "English", "Art"] },
+      { "time": "09:00", "lessons": ["Maths", "English", "History", "Maths", "Music"] },
+      { "time": "10:00", "lessons": ["Science", "PE", "English", "Science", "English"] },
+      { "time": "11:00", "lessons": ["History", "Art", "Maths", "PE", "Maths"] },
+      { "time": "13:30", "lessons": ["Music", "Science", "Art", "History", "PE"] }
+    ] },
+    { "type": "choice", "who": "yasemin", "text": "So. When does it crackle?", "tr": "Yani. Ne zaman cızırdıyor?", "options": [
+      { "text": "Every day at 07:45.", "tr": "Her gün 07:45'te." },
+      { "text": "Only on Fridays.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Mondays too. Every day!", "tr": "Pazartesi de. Her gün!", "expr": "worried" } },
+      { "text": "At 13:30.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "No. Registration time.", "tr": "Hayır. Yoklama saati.", "expr": "think" } }
+    ] },
+
+    { "type": "bg", "preset": "classroom", "signal": 0.5, "static": 0.5 },
+    { "type": "say", "who": "echo", "text": "…every… day… listen…", "tr": "…her… gün… dinle…" },
+    { "type": "broken_message", "text": "Every [day] at 07:45. I [always] listen. Do you [hear] me, {name}?",
+      "options": { "day": ["day", "night", "week"], "always": ["always", "never", "sometimes"], "hear": ["hear", "see", "eat"] },
+      "hints": { "day": "☀️", "night": "🌙", "week": "📅", "always": "⏰", "never": "🚫", "sometimes": "🎲", "hear": "👂", "see": "👁️", "eat": "🍽️" } },
+    { "type": "choice", "who": "echo", "text": "Do you hear me?", "tr": "Beni duyuyor musun?", "options": [
+      { "text": "Yes. I hear you every day.", "tr": "Evet. Seni her gün duyuyorum." },
+      { "text": "Yes. I hears you.", "tr": "", "ok": false, "reply": { "text": "…I… hear…", "tr": "…I… hear…" } },
+      { "text": "No.", "tr": "", "ok": false, "reply": { "text": "…listen… again…", "tr": "…tekrar… dinle…" } }
+    ] },
+
+    { "type": "bg", "preset": "classroom", "signal": 0.2, "static": 0.1 },
+    { "type": "say", "who": "yasemin", "text": "The radio cabinet. Locked. Voice lock.", "tr": "Radyo dolabı. Kilitli. Ses kilidi.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "I hear it every day.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "omar", "text": "Open! An old tape recorder!", "tr": "Açıldı! Eski bir teyp!", "expr": "excited" },
+    { "type": "say", "who": "yasemin", "text": "Our routines. Ask. Then answer.", "tr": "Rutinlerimiz. Sor. Sonra cevapla.", "expr": "smile" },
+    { "type": "interview", "title": "My Routine · Episode 2", "file": "routine", "questions": [
+      { "q": "What time do you wake up?", "who": "leo", "a": "I wake up at 6:30.", "you": "And you? What time do you wake up?" },
+      { "q": "How do you go to school?", "who": "mei", "a": "I walk to school. Every day.", "you": "And you? How do you go to school?" },
+      { "q": "What do you do after school?", "who": "omar", "a": "I often watch films. Then I hit the books!", "you": "And you? What do you do after school?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Work hard, play later!", "tr": "Önce iş, sonra oyun!", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.3, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 2.", "tr": "Kaptan günlüğü. İkinci gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Day 2", "hints": ["⏰", "📻", "📚"], "min": 2, "placeholder": "I always … at … The radio …",
+      "feedback": [
+        { "contains": ["every"], "who": "yasemin", "text": "Every day. Yes. Like a clock.", "tr": "Her gün. Evet. Saat gibi.", "expr": "excited" },
+        { "contains": ["always"], "who": "yasemin", "text": "Always. Yes. Like a clock.", "tr": "Her zaman. Evet. Saat gibi.", "expr": "excited" },
+        { "contains": ["at"], "who": "yasemin", "text": "Good. Add every day, or always?", "tr": "Güzel. Every day ya da always ekle?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: I always… at…", "tr": "Dene: I always… at…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "classroom_night", "vars": { "clock": "23:40" }, "rain": 0.2, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "signal_grid", "mode": "reveal", "ms": 1600, "hold": 2400, "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "hours": [
+      { "time": "07:45", "lessons": ["Registration", "Registration", "Registration", "Registration", "Registration"] },
+      { "time": "08:00", "lessons": ["English", "Maths", "Science", "English", "Art"] },
+      { "time": "09:00", "lessons": ["Maths", "English", "History", "Maths", "Music"] },
+      { "time": "10:00", "lessons": ["Science", "PE", "English", "Science", "English"] },
+      { "time": "11:00", "lessons": ["History", "Art", "Maths", "PE", "Maths"] },
+      { "time": "13:30", "lessons": ["Music", "Science", "Art", "History", "PE"] }
+    ], "extra": { "time": "??:??", "ms": 550, "cells": ["H", "E", "L", "L", "O"] } },
+    { "type": "bg", "preset": "classroom_night", "signal": 0.95, "static": 0.9 },
+    { "type": "say", "who": "echo", "text": "Lesson seven. Don't be late, {name}.", "tr": "Yedinci ders. Geç kalma, {name}." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "The Blurred Face", "ms": 5000 }
+  ]
+}

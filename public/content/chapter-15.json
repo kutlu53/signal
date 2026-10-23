@@ -1,0 +1,139 @@
+{
+  "id": "15",
+  "season": 2,
+  "title": "Save Our Planet",
+  "theme": "Life in Nature & Global Problems",
+  "cefr": "B1.2",
+  "next": "16",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["defining relative clauses: that / which / who", "connecting with so", "revision: should, must"],
+  "vocab_key": ["natural resources", "renewable", "solar energy", "wind energy", "freshwater", "deforestation", "global warming", "water shortage", "to reduce consumption", "to reuse", "to recycle", "to take precautions", "habitat destruction", "conservationist", "activist"],
+  "social": ["Let's save our planet!", "Every drop counts!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "green_roof", "vars": { "dry": true }, "ms": 3400, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "camp", "vars": { "eyes": false }, "ms": 3000, "signal": 0.2, "static": 0.2 },
+      { "preset": "green_roof", "vars": { "dry": false }, "ms": 3600, "signal": 0.4, "static": 0.3 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 7 · Save Our Planet", "ms": 3600 },
+
+    { "type": "bg", "preset": "green_roof", "vars": { "dry": true } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "leo", "text": "The river is low. No rain for weeks.", "tr": "Nehir çekilmiş. Haftalardır yağmur yok.", "expr": "worried" },
+    { "type": "say", "who": "mei", "text": "Water shortage. The hills are brown.", "tr": "Su kıtlığı. Tepeler kahverengi.", "expr": "worried" },
+    { "type": "say", "who": "yasemin", "text": "Echo said: the forests haven't come back.", "tr": "Echo dedi: ormanlar geri gelmedi.", "expr": "think" },
+    { "type": "say", "who": "omar", "text": "Four schools. One project. Let's save our planet!", "tr": "Dört okul. Bir proje. Gezegenimizi kurtaralım!", "expr": "excited" },
+    { "type": "bg", "preset": "green_roof", "signal": 0.4, "static": 0.3 },
+    { "type": "say", "who": "echo", "text": "…resources… which… never… run out…", "tr": "…hiç… tükenmeyen… kaynaklar…" },
+    { "type": "broken_message", "text": "Solar energy is a resource [which] never runs out. People [who] waste water hurt the river. It's hot, [so] the river is low.",
+      "options": { "which": ["which", "who", "so"], "who": ["who", "which", "so"], "so": ["so", "which", "who"] },
+      "hints": { "which": "📦", "who": "👤", "so": "➡️" } },
+    { "type": "choice", "who": "echo", "text": "What is a renewable resource?", "tr": "Yenilenebilir kaynak nedir?", "options": [
+      { "text": "A resource that never runs out.", "tr": "Hiç tükenmeyen bir kaynak." },
+      { "text": "A resource who never runs out.", "tr": "", "ok": false, "reply": { "text": "…that… or which… not who…", "tr": "…that… ya da which… who değil…" } },
+      { "text": "A resource never runs out that.", "tr": "", "ok": false, "reply": { "text": "…a resource THAT never…", "tr": "…a resource THAT never…" } }
+    ] },
+    { "type": "bg", "preset": "green_roof", "signal": 0.1, "static": 0 },
+
+    { "type": "say", "who": "leo", "text": "Problems and causes. Match them.", "tr": "Sorunlar ve nedenler. Eşleştir.", "expr": "think" },
+    { "type": "match", "title": "Global problems", "who": "leo", "pairs": [
+      { "a": "🌳 deforestation", "b": "people cut down forests" },
+      { "a": "🌡️ global warming", "b": "the planet gets hotter" },
+      { "a": "💧 water shortage", "b": "not enough freshwater" },
+      { "a": "🏭 air pollution", "b": "smoke from factories and cars" },
+      { "a": "🦌 habitat destruction", "b": "animals lose their homes" },
+      { "a": "🗑️ plastic waste", "b": "rubbish that never disappears" }
+    ] },
+    { "type": "say", "who": "mei", "text": "Anya sent the project plan. Read it.", "tr": "Anya proje planını gönderdi. Oku.", "expr": "smile" },
+    { "type": "note", "title": "FOUR SCHOOLS · one planet · plan",
+      "text": "Northgate: solar panels on the roof, which power the lab. Anya's school: a wind turbine that heats the canteen. Marco's school: a boat club who cleans the lake every Sunday. Yuki's school: rain barrels, so the garden needs no tap water. Every drop counts!",
+      "question": { "who": "omar", "text": "Marco's club cleans the lake every day, doesn't it?", "tr": "Marco'nun kulübü gölü her gün temizliyor, değil mi?", "expr": "wink", "options": [
+        { "text": "No. Every Sunday.", "tr": "Hayır. Her pazar." },
+        { "text": "Yes. Every day.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Read again. Sundays.", "tr": "Tekrar oku. Pazar günleri.", "expr": "think" } },
+        { "text": "Only in summer.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Every Sunday. All year.", "tr": "Her pazar. Bütün yıl.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "Every drop counts. Our turn.", "tr": "Her damla önemli. Sıra bizde.", "expr": "smile" },
+
+    { "type": "say", "who": "leo", "text": "Link the sentences. Which, who, so.", "tr": "Cümleleri bağla. Which, who, so.", "expr": "think" },
+    { "type": "link", "title": "Link the sentences", "who": "leo", "items": [
+      { "a": "Solar energy is a resource", "b": "never runs out.", "opts": ["which", "who", "so"], "ans": "which" },
+      { "a": "A conservationist is a person", "b": "protects nature.", "opts": ["who", "which", "so"], "ans": "who" },
+      { "a": "It hasn't rained for weeks,", "b": "the river is low.", "opts": ["so", "which", "who"], "ans": "so" },
+      { "a": "Freshwater is water", "b": "we can drink.", "opts": ["that", "who", "so"], "ans": "that" },
+      { "a": "Activists are people", "b": "spread the word.", "opts": ["who", "which", "so"], "ans": "who" },
+      { "a": "We reuse bottles,", "b": "we make less waste.", "opts": ["so", "that", "who"], "ans": "so" }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Renewable, or not? Sort the resources.", "tr": "Yenilenebilir mi, değil mi? Kaynakları ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "ren", "label": "renewable · never runs out" }, { "id": "non", "label": "non-renewable · runs out" }],
+      "cards": [
+        { "text": "solar energy", "g": "ren" }, { "text": "wind energy", "g": "ren" }, { "text": "water power", "g": "ren" }, { "text": "energy from plants", "g": "ren" },
+        { "text": "coal", "g": "non" }, { "text": "oil", "g": "non" }, { "text": "natural gas", "g": "non" }, { "text": "metal from mines", "g": "non" }
+      ],
+      "speed": [
+        { "text": "A turbine is a machine ___ makes energy.", "opts": ["which", "who", "so"], "a": "which" },
+        { "text": "People ___ recycle help the planet.", "opts": ["who", "which", "so"], "a": "who" },
+        { "text": "It's dry, ___ we should save water.", "opts": ["so", "which", "who"], "a": "so" },
+        { "text": "We ___ reduce our consumption.", "opts": ["should", "so", "who"], "a": "should" },
+        { "text": "Coal is a resource ___ runs out.", "opts": ["that", "who", "so"], "a": "that" },
+        { "text": "We ___ take precautions now.", "opts": ["must", "so", "which"], "a": "must" }
+      ] },
+
+    { "type": "say", "who": "mei", "text": "Tags. Yuki's questions about water.", "tr": "Kuyruklar. Yuki'nin su soruları.", "expr": "think" },
+    { "type": "tags", "title": "Question tags", "who": "echo", "items": [
+      { "text": "Solar energy is renewable, ___?", "opts": ["isn't it", "is it", "doesn't it"], "a": "isn't it" },
+      { "text": "We should reduce waste, ___?", "opts": ["shouldn't we", "should we", "don't we"], "a": "shouldn't we" },
+      { "text": "The river hasn't dried up, ___?", "opts": ["has it", "hasn't it", "did it"], "a": "has it" },
+      { "text": "You recycle at home, ___?", "opts": ["don't you", "do you", "aren't you"], "a": "don't you" },
+      { "text": "Coal isn't renewable, ___?", "opts": ["is it", "isn't it", "does it"], "a": "is it" }
+    ] },
+
+    { "type": "bg", "preset": "green_roof", "vars": { "dry": false }, "signal": 0.2 },
+    { "type": "say", "who": "omar", "text": "The rain barrel tap. Locked. Say it.", "tr": "Yağmur fıçısı musluğu. Kilitli. Söyle.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "Let's save our planet.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "leo", "text": "Open! Water for the garden. Roll camera.", "tr": "Açıldı! Bahçe için su. Kamera.", "expr": "excited" },
+    { "type": "interview", "title": "Nature & Global Problems · role-play", "file": "planet", "questions": [
+      { "q": "Conservationist: what is the problem here?", "who": "leo", "a": "Water shortage. The river, which feeds the town, is low.", "you": "And you, scientist? What's the problem?" },
+      { "q": "Scientist: what causes it?", "who": "mei", "a": "Global warming, so it rains less.", "you": "And you, activist? What causes it?" },
+      { "q": "Activist: what should we do?", "who": "omar", "a": "Reuse. Reduce. Rain barrels. Spread the word!", "you": "And you? What should we do?" }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "Four schools, one planet. Great take.", "tr": "Dört okul, bir gezegen. Harika çekim.", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.4, "signal": 0, "static": 0 },
+    { "type": "say", "who": "omar", "text": "Rain! Finally. Every drop counts.", "tr": "Yağmur! Nihayet. Her damla önemli.", "expr": "excited" },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 7.", "tr": "Kaptan günlüğü. Yedinci gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Season 2 · Day 7", "hints": ["☀️", "💧", "🌳"], "min": 2, "placeholder": "A renewable resource is energy which … We should …, so …",
+      "feedback": [
+        { "contains": ["which"], "who": "yasemin", "text": "Which. A relative clause. Expert.", "tr": "Which. Sıfat cümleciği. Uzman.", "expr": "excited" },
+        { "contains": ["so"], "who": "yasemin", "text": "So. Cause and result. Good.", "tr": "So. Neden ve sonuç. Güzel.", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: Solar energy is energy which…", "tr": "Dene: Solar energy is energy which…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": false }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "ECHO · 2056 · status", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["The river that feeds the town: saved.", "The forests which you planted: growing.", "Four schools who listened: thank you.", "One signal left. Look up, {name}. 2100."] },
+    { "type": "bg", "preset": "attic_sky", "vars": { "radio": true, "beam": true }, "signal": 0.95, "static": 0.8 },
+    { "type": "say", "who": "echo", "text": "The last signal isn't from Earth.", "tr": "Son sinyal Dünya'dan değil." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "A Whole New World", "ms": 5000 }
+  ]
+}

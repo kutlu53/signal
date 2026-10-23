@@ -1,0 +1,162 @@
+{
+  "id": "04",
+  "title": "Frequency",
+  "theme": "Family Life",
+  "cefr": "B1.1",
+  "next": "05",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["simple present questions and answers (What does she do? She's a … / She runs …)", "prepositions of place: at, in, on"],
+  "vocab_key": ["engineer", "pharmacist", "journalist", "photographer", "lawyer", "programmer", "security guard", "radio tower", "pharmacy", "news agency", "law firm", "studio", "run", "serve", "report", "shoot", "defend", "develop", "night shift", "uncle", "cousin", "nephew", "niece", "stepfather", "relative"],
+  "social": ["Great job!", "She made it!", "She's in charge of the tower."],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "tower_night", "vars": { "pulse": false, "book": false }, "ms": 3600, "rain": 0.3, "signal": 0, "static": 0 },
+      { "preset": "tower_night", "vars": { "pulse": true }, "ms": 3800, "signal": 0.35, "static": 0.5 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Episode 4 · Frequency", "ms": 3400 },
+
+    { "type": "bg", "preset": "common", "rain": 0 },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "omar", "text": "My mum works at night. Radio tower.", "tr": "Annem gece çalışıyor. Radyo kulesi.", "expr": "smile" },
+    { "type": "say", "who": "yasemin", "text": "What does she do?", "tr": "Ne iş yapıyor?" },
+    { "type": "say", "who": "omar", "text": "She's an engineer. She runs the tower.", "tr": "Mühendis. Kuleyi o yönetiyor.", "expr": "excited" },
+    { "type": "say", "who": "omar", "text": "And Dad? He's a pharmacist.", "tr": "Babam mı? Eczacı.", "expr": "smile" },
+    { "type": "choice", "who": "yasemin", "text": "{name}, what does Omar's dad do?", "tr": "{name}, Omar'ın babası ne iş yapıyor?", "options": [
+      { "text": "He's a pharmacist. He works at a pharmacy.", "tr": "Eczacı. Eczanede çalışıyor." },
+      { "text": "He's a pharmacy.", "tr": "", "ok": false, "reply": { "who": "omar", "text": "A pharmacy is a place!", "tr": "Eczane bir yer!", "expr": "surprised" } },
+      { "text": "He work at a pharmacy.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "He works. With -s.", "tr": "He works. -s ile.", "expr": "think" } }
+    ] },
+    { "type": "say", "who": "mei", "text": "Family jobs. Let's match them.", "tr": "Aile meslekleri. Eşleştirelim.", "expr": "smile" },
+    { "type": "match", "title": "Who works where?", "who": "mei", "pairs": [
+      { "a": "📡 Leyla · engineer", "b": "at a radio tower" },
+      { "a": "💊 Karim · pharmacist", "b": "at a pharmacy" },
+      { "a": "📰 Tarek · journalist", "b": "at a news agency" },
+      { "a": "📷 Leo's mum · photographer", "b": "in a photo studio" },
+      { "a": "⚖️ Mei's dad · lawyer", "b": "at a law firm" },
+      { "a": "💻 Yasemin's mum · programmer", "b": "at an IT company" }
+    ] },
+    { "type": "match", "title": "Who does what?", "who": "mei", "pairs": [
+      { "a": "📡 engineer", "b": "runs the tower" },
+      { "a": "💊 pharmacist", "b": "serves customers" },
+      { "a": "📰 journalist", "b": "reports the news" },
+      { "a": "📷 photographer", "b": "shoots photographs" },
+      { "a": "⚖️ lawyer", "b": "defends people" },
+      { "a": "💻 programmer", "b": "develops software" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Tonight. The tower. Mum's shift.", "tr": "Bu gece. Kule. Annemin vardiyası.", "expr": "excited" },
+
+    { "type": "bg", "preset": "tower_night", "vars": { "pulse": false }, "rain": 0.3 },
+    { "type": "say", "who": "leyla", "text": "Welcome! I'm Leyla, Omar's mum.", "tr": "Hoş geldiniz! Ben Leyla, Omar'ın annesi.", "expr": "smile" },
+    { "type": "say", "who": "leyla", "text": "Big family. Let me show you.", "tr": "Büyük aile. Göstereyim.", "expr": "smile" },
+    { "type": "family", "who": "leyla",
+      "rows": [
+        [{ "id": "ali", "name": "Grandpa Ali", "icon": "👴" }, { "id": "fatma", "name": "Grandma Fatma", "icon": "👵" }],
+        [{ "id": "leyla", "name": "Leyla", "icon": "👩‍🔧", "rel": "mother" }, { "id": "karim", "name": "Karim", "icon": "👨‍⚕️", "rel": "father" }, { "id": "tarek", "name": "Tarek", "icon": "👨‍💼" }, { "id": "hakan", "name": "Hakan", "icon": "🧔" }],
+        [{ "id": "omar", "name": "Omar", "icon": "🧑" }, { "id": "nour", "name": "Nour", "icon": "👧" }, { "id": "sami", "name": "Sami", "icon": "👦" }]
+      ],
+      "rounds": [
+        { "text": "My brother. Omar's uncle.", "target": "tarek", "label": "uncle" },
+        { "text": "Tarek's son. Omar's cousin.", "target": "sami", "label": "cousin" },
+        { "text": "For Tarek, Omar is his…", "target": "omar", "label": "nephew" },
+        { "text": "For Tarek, Nour is his…", "target": "nour", "label": "niece" },
+        { "text": "Sami's mother's new husband.", "target": "hakan", "label": "stepfather" }
+      ] },
+    { "type": "say", "who": "omar", "text": "Great job! You know my family.", "tr": "Harika! Ailemi tanıdın.", "expr": "smile" },
+
+    { "type": "bg", "preset": "tower_room", "vars": { "book": true } },
+    { "type": "say", "who": "leyla", "text": "My night shift. Listen.", "tr": "Gece vardiyam. Dinle." },
+    { "type": "sequence", "who": "leyla", "listens": 3, "items": [
+      { "icon": "🕘", "text": "I start my shift.", "time": "21:00", "say": "I start my shift at nine." },
+      { "icon": "📡", "text": "I check the antenna.", "time": "22:00", "say": "I check the antenna at ten." },
+      { "icon": "📝", "text": "I record the frequencies.", "time": "23:00", "say": "I record the frequencies at eleven." },
+      { "icon": "📻", "text": "I hear the signal.", "time": "23:40", "say": "I hear the signal at eleven forty." },
+      { "icon": "☕", "text": "I have a coffee break.", "time": "00:30", "say": "I have a coffee break at half past twelve." },
+      { "icon": "🌅", "text": "I finish my shift.", "time": "06:00", "say": "I finish my shift at six." }
+    ] },
+    { "type": "say", "who": "yasemin", "text": "She checks. She records. Every night.", "tr": "Kontrol ediyor. Kaydediyor. Her gece.", "expr": "think" },
+    { "type": "say", "who": "leyla", "text": "At the tower. In the room. On air.", "tr": "Kulede. Odada. Yayında.", "expr": "smile" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "at", "label": "at" }, { "id": "in", "label": "in" }, { "id": "on", "label": "on" }],
+      "cards": [
+        { "text": "She works at a radio tower.", "g": "at" }, { "text": "He works at a pharmacy.", "g": "at" }, { "text": "They work at a law firm.", "g": "at" },
+        { "text": "He works in a science lab.", "g": "in" }, { "text": "She works in an office.", "g": "in" }, { "text": "Omar is in the control room.", "g": "in" },
+        { "text": "We're on the top floor.", "g": "on" }, { "text": "She's on air at night.", "g": "on" }
+      ],
+      "speed": [
+        { "text": "My aunt works ___ a bank.", "opts": ["at", "on", "under"], "a": "at" },
+        { "text": "He works ___ an office.", "opts": ["in", "on", "to"], "a": "in" },
+        { "text": "Her desk is ___ the 2nd floor.", "opts": ["on", "at", "in"], "a": "on" },
+        { "text": "She ___ software.", "opts": ["develops", "develop", "developing"], "a": "develops" },
+        { "text": "___ does he do?", "opts": ["What", "Who", "Where"], "a": "What" },
+        { "text": "He ___ work at night.", "opts": ["doesn't", "don't", "isn't"], "a": "doesn't" }
+      ] },
+
+    { "type": "bg", "preset": "tower_room", "signal": 0.4, "static": 0.5 },
+    { "type": "say", "who": "echo", "text": "…what… does… she… do…", "tr": "…ne… iş… yapıyor…" },
+    { "type": "broken_message", "text": "Where [does] she work? She [works] at the tower. [What] is her job?",
+      "options": { "does": ["does", "do", "is"], "works": ["works", "work", "working"], "What": ["What", "Where", "Who"] },
+      "hints": { "does": "❓", "do": "👥", "is": "🟰", "works": "👩‍🔧", "work": "👥", "working": "⏳", "What": "💼", "Where": "🗺️", "Who": "👤" } },
+    { "type": "choice", "who": "echo", "text": "What does she do?", "tr": "Ne iş yapıyor?", "options": [
+      { "text": "She's an engineer. She runs the tower.", "tr": "Mühendis. Kuleyi yönetiyor." },
+      { "text": "She run the tower.", "tr": "", "ok": false, "reply": { "text": "…runs… -s…", "tr": "…runs… -s…" } },
+      { "text": "She is the tower.", "tr": "", "ok": false, "reply": { "text": "…no… her job…", "tr": "…hayır… işi…" } }
+    ] },
+    { "type": "bg", "preset": "tower_room", "signal": 0.1, "static": 0.1 },
+    { "type": "say", "who": "leyla", "text": "The logbook. Thirty years of frequencies.", "tr": "Kayıt defteri. Otuz yıllık frekanslar.", "expr": "think" },
+    { "type": "note", "title": "Frequency logbook · 1996",
+      "text": "Night log. 12 March 1996. 23:40. Signal on 104.5 FM. Strong. A voice. It says a name. Operator: S. Demir. Note: the same signal, every night, at 23:40.",
+      "question": { "who": "omar", "text": "The signal is on 98.1, right?", "tr": "Sinyal 98.1'de, değil mi?", "expr": "wink", "options": [
+        { "text": "No. On 104.5.", "tr": "Hayır. 104.5'te." },
+        { "text": "Yes. On 98.1.", "tr": "", "ok": false, "reply": { "who": "leyla", "text": "Read again. 104.5.", "tr": "Tekrar oku. 104.5.", "expr": "think" } },
+        { "text": "On 23:40.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "That's the time.", "tr": "O saat.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "1996. The same signal. Thirty years.", "tr": "1996. Aynı sinyal. Otuz yıl.", "expr": "worried" },
+
+    { "type": "say", "who": "leyla", "text": "The tape archive. Locked. Voice lock.", "tr": "Bant arşivi. Kilitli. Ses kilidi.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "What does your mum do?", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "leyla", "text": "Open! Old tapes. Old interviews.", "tr": "Açıldı! Eski bantlar. Eski röportajlar.", "expr": "surprised" },
+    { "type": "say", "who": "yasemin", "text": "Family jobs. Our interview. Record it.", "tr": "Aile meslekleri. Röportajımız. Kaydet.", "expr": "smile" },
+    { "type": "interview", "title": "Family Jobs · Episode 4", "file": "family", "questions": [
+      { "q": "What does your mother do?", "who": "leo", "a": "She's a photographer. She shoots photos.", "you": "And you? What does your mother do?" },
+      { "q": "Where does your father work?", "who": "mei", "a": "At a law firm. He's a lawyer.", "you": "And your father? Where does he work?" },
+      { "q": "Who in your family works at night?", "who": "omar", "a": "My mum. She runs the radio tower.", "you": "And in your family? Who works where?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "She made it! Great job, everyone.", "tr": "Başardı! Harika iş, herkese.", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 4.", "tr": "Kaptan günlüğü. Dördüncü gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Day 4", "hints": ["📡", "👩‍🔧", "📖"], "min": 2, "placeholder": "My mother is a … She works at …",
+      "feedback": [
+        { "contains": ["works"], "who": "yasemin", "text": "Works. With -s. Perfect.", "tr": "Works. -s ile. Mükemmel.", "expr": "excited" },
+        { "contains": ["is a"], "who": "yasemin", "text": "Good. Where does she work?", "tr": "Güzel. Nerede çalışıyor?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: My mother is a… She works at…", "tr": "Dene: My mother is a… She works at…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "tower_room", "vars": { "book": true, "pulse": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1200 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "Night log · 12 March 1996", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["23:40 · 104.5 FM", "A voice. It says:", "“{name}. I can hear you.”", "Operator: S. Demir"] },
+    { "type": "bg", "preset": "tower_room", "signal": 0.95, "static": 0.9 },
+    { "type": "say", "who": "echo", "text": "Thirty years. Same voice. {name}.", "tr": "Otuz yıl. Aynı ses. {name}." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Room 0", "ms": 5000 }
+  ]
+}

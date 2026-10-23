@@ -1,0 +1,148 @@
+{
+  "id": "12",
+  "season": 2,
+  "title": "Chin Up",
+  "theme": "Family Life & Home",
+  "cefr": "B1.2",
+  "next": "13",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["simple past: was/were, regular and irregular verbs", "used to", "could for past ability", "question tags in the past"],
+  "vocab_key": ["sibling", "distant relative", "nuclear family", "single-parent family", "to do the laundry", "to run errands", "igloo", "treehouse", "houseboat", "detached house", "to go cycling", "to do archery", "to go rafting", "sitcom", "documentary", "romantic comedy"],
+  "social": ["Cheers for helping me!", "Keep your chin up!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "mountain_school", "vars": { "lit": false }, "ms": 3400, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "mountain_school", "vars": { "lit": true }, "ms": 3400, "signal": 0.3, "static": 0.3 },
+      { "preset": "library_night", "vars": { "book": true, "erased": false }, "ms": 3600, "signal": 0.2, "static": 0.2 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 4 · Chin Up", "ms": 3600 },
+
+    { "type": "bg", "preset": "library", "vars": { "book": true, "erased": false } },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "mei", "text": "Yuki's grandmother. Here. 1996. The yearbook.", "tr": "Yuki'nin büyükannesi. Burada. 1996. Yıllık.", "expr": "surprised" },
+    { "type": "say", "who": "leo", "text": "Student 12 was Hana Sato. From Japan.", "tr": "12 numaralı öğrenci Hana Sato'ydu. Japonya'dan.", "expr": "think" },
+    { "type": "say", "who": "omar", "text": "Wait. Student 12 had YOUR name!", "tr": "Dur. 12 numaranın SENİN adın vardı!", "expr": "surprised" },
+    { "type": "say", "who": "yasemin", "text": "Keep your chin up. Yuki is calling.", "tr": "Moralini bozma. Yuki arıyor.", "expr": "smile" },
+    { "type": "bg", "preset": "library", "signal": 0.4, "static": 0.3 },
+    { "type": "say", "who": "echo", "text": "…konnichiwa… my grandma… 1996…", "tr": "…konnichiwa… büyükannem… 1996…" },
+    { "type": "broken_message", "text": "My grandma [was] at Northgate in 1996. She [used] to live in the attic. She [could] hear a voice.",
+      "options": { "was": ["was", "is", "were"], "used": ["used", "use", "uses"], "could": ["could", "can", "should"] },
+      "hints": { "was": "⏮️", "is": "▶️", "were": "👥", "used": "📼", "use": "🔧", "uses": "👤", "could": "👂⏮️", "can": "👂▶️", "should": "💡" } },
+    { "type": "choice", "who": "echo", "text": "She lived in the attic, didn't she?", "tr": "Çatı katında yaşadı, değil mi?", "options": [
+      { "text": "Yes, she did. In Room 0?", "tr": "Evet. Oda 0'da mı?" },
+      { "text": "Yes, she didn't.", "tr": "", "ok": false, "reply": { "text": "…yes, she DID…", "tr": "…yes, she DID…" } },
+      { "text": "Yes, she does.", "tr": "", "ok": false, "reply": { "text": "…1996… did…", "tr": "…1996… did…" } }
+    ] },
+    { "type": "bg", "preset": "library", "signal": 0.1, "static": 0 },
+
+    { "type": "say", "who": "yasemin", "text": "Hana's family. Yuki sent a tree.", "tr": "Hana'nın ailesi. Yuki bir ağaç gönderdi.", "expr": "think" },
+    { "type": "family", "who": "mei",
+      "rows": [
+        [{ "id": "hana", "name": "Hana", "icon": "👵" }, { "id": "ken", "name": "Ken", "icon": "👴" }],
+        [{ "id": "aiko", "name": "Aiko", "icon": "👩", "rel": "mother" }, { "id": "sato", "name": "Sato", "icon": "👨" }, { "id": "rin", "name": "Rin", "icon": "👩‍🦱" }],
+        [{ "id": "yuki", "name": "Yuki", "icon": "👧" }, { "id": "taro", "name": "Taro", "icon": "👦" }, { "id": "emi", "name": "Emi", "icon": "🧒" }]
+      ],
+      "rounds": [
+        { "text": "Yuki's grandmother. Student 12.", "target": "hana", "label": "grandmother" },
+        { "text": "Taro is Yuki's brother. Her sibling.", "target": "taro", "label": "sibling" },
+        { "text": "Aiko's sister. Yuki's aunt.", "target": "rin", "label": "aunt" },
+        { "text": "Rin's daughter. A distant relative? No, a cousin.", "target": "emi", "label": "cousin" },
+        { "text": "Aiko's husband. He used to row.", "target": "sato", "label": "father" }
+      ] },
+    { "type": "say", "who": "omar", "text": "A big family. Like mine!", "tr": "Büyük bir aile. Benimki gibi!", "expr": "smile" },
+
+    { "type": "say", "who": "leo", "text": "Hana's letter. In the yearbook. Read it.", "tr": "Hana'nın mektubu. Yıllıkta. Oku.", "expr": "think" },
+    { "type": "note", "title": "Hana Sato · June 1996",
+      "text": "I used to live in the attic room. Every night I could hear a voice on the old radio. It said a name. My family lived far away, in a treehouse in the mountains. My sister did the laundry; I ran errands. We went rafting in summer. I was happy here. Keep your chin up, future friend.",
+      "question": { "who": "omar", "text": "Hana's family lived in an igloo, didn't they?", "tr": "Hana'nın ailesi igluda yaşıyordu, değil mi?", "expr": "wink", "options": [
+        { "text": "No, they didn't. A treehouse.", "tr": "Hayır. Ağaç evde." },
+        { "text": "Yes, they did. An igloo.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Read again. A treehouse.", "tr": "Tekrar oku. Ağaç ev.", "expr": "think" } },
+        { "text": "In a houseboat.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Mountains. A treehouse.", "tr": "Dağlar. Ağaç ev.", "expr": "think" } }
+      ] } },
+    { "type": "say", "who": "yasemin", "text": "\"Future friend.\" She wrote to us.", "tr": "\"Gelecekteki arkadaş.\" Bize yazmış.", "expr": "surprised" },
+
+    { "type": "say", "who": "mei", "text": "Then, or now? Hana then. Yuki now.", "tr": "O zaman mı, şimdi mi? Hana o zaman. Yuki şimdi.", "expr": "think" },
+    { "type": "then_now", "who": "mei", "then": { "label": "Hana · 1996", "icon": "📻" }, "now": { "label": "Yuki · today", "icon": "📱" }, "items": [
+      { "text": "She used to walk to school.", "side": "then" },
+      { "text": "She could hear the radio at night.", "side": "then" },
+      { "text": "They went rafting every summer.", "side": "then" },
+      { "text": "Her sister did the laundry.", "side": "then" },
+      { "text": "She takes the bus to school.", "side": "now" },
+      { "text": "She watches sitcoms on her phone.", "side": "now" },
+      { "text": "She does archery after school.", "side": "now" },
+      { "text": "Her brother runs errands.", "side": "now" }
+    ] },
+    { "type": "say", "who": "leo", "text": "Same family. Different times. Sort the verbs.", "tr": "Aynı aile. Farklı zamanlar. Fiilleri ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "reg", "label": "regular · -ed" }, { "id": "irr", "label": "irregular" }],
+      "cards": [
+        { "text": "She lived in the attic.", "g": "reg" }, { "text": "They walked to school.", "g": "reg" }, { "text": "She played the piano.", "g": "reg" }, { "text": "We watched a documentary.", "g": "reg" },
+        { "text": "She went rafting.", "g": "irr" }, { "text": "I ran errands.", "g": "irr" }, { "text": "She did the laundry.", "g": "irr" }, { "text": "He had a houseboat.", "g": "irr" }
+      ],
+      "speed": [
+        { "text": "Hana ___ in the attic in 1996.", "opts": ["lived", "lives", "live"], "a": "lived" },
+        { "text": "She ___ rafting every summer.", "opts": ["went", "goed", "goes"], "a": "went" },
+        { "text": "We ___ to live in a cottage.", "opts": ["used", "use", "were"], "a": "used" },
+        { "text": "She ___ swim when she was five.", "opts": ["could", "can", "should"], "a": "could" },
+        { "text": "They ___ at Northgate in 1996.", "opts": ["were", "was", "are"], "a": "were" },
+        { "text": "She lived here, ___ she?", "opts": ["didn't", "wasn't", "doesn't"], "a": "didn't" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "Past tags. Yuki asks them.", "tr": "Geçmiş zaman kuyrukları. Yuki soruyor.", "expr": "think" },
+    { "type": "tags", "title": "Question tags · past", "who": "echo", "items": [
+      { "text": "Grandma was at Northgate, ___?", "opts": ["wasn't she", "was she", "didn't she"], "a": "wasn't she" },
+      { "text": "She used to live in the attic, ___?", "opts": ["didn't she", "did she", "wasn't she"], "a": "didn't she" },
+      { "text": "You could hear it too, ___?", "opts": ["couldn't you", "could you", "didn't you"], "a": "couldn't you" },
+      { "text": "They didn't live in an igloo, ___?", "opts": ["did they", "didn't they", "were they"], "a": "did they" },
+      { "text": "Your family weren't here, ___?", "opts": ["were they", "weren't they", "did they"], "a": "were they" }
+    ] },
+
+    { "type": "bg", "preset": "hidden_room", "vars": { "pins": false }, "signal": 0.2 },
+    { "type": "say", "who": "omar", "text": "Room 0. Hana's old room. Locked again.", "tr": "Oda 0. Hana'nın eski odası. Yine kilitli.", "expr": "worried" },
+    { "type": "voice_lock", "phrase": "Keep your chin up, future friend.", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "mei", "text": "Open! Hana's old tapes. Family stories.", "tr": "Açıldı! Hana'nın eski bantları. Aile hikâyeleri.", "expr": "excited" },
+    { "type": "say", "who": "yasemin", "text": "Our turn. Family, then and now.", "tr": "Sıra bizde. Aile, o zaman ve şimdi.", "expr": "smile" },
+    { "type": "interview", "title": "Family Life & Home · generations", "file": "generations", "questions": [
+      { "q": "What did your grandparents use to do?", "who": "leo", "a": "They used to farm. In Brazil.", "you": "And yours? What did they use to do?" },
+      { "q": "What could your mother do as a child?", "who": "mei", "a": "She could draw. Like me.", "you": "And your parents? What could they do?" },
+      { "q": "What type of house did they live in?", "who": "omar", "a": "A detached house. Near the tower.", "you": "And your family? What type of house?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "Cheers for helping me, {name}!", "tr": "Yardımın için sağ ol, {name}!", "expr": "smile" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 4.", "tr": "Kaptan günlüğü. Dördüncü gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Season 2 · Day 4", "hints": ["👵", "🏠", "📻"], "min": 2, "placeholder": "My grandmother used to … She could … We lived in …",
+      "feedback": [
+        { "contains": ["used to"], "who": "yasemin", "text": "Used to. The past. Like Hana.", "tr": "Used to. Geçmiş. Hana gibi.", "expr": "excited" },
+        { "contains": ["could"], "who": "yasemin", "text": "Could. Good. What did she use to do?", "tr": "Could. Güzel. Ne yapardı?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: My grandmother used to…", "tr": "Dene: My grandmother used to…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "hidden_room", "vars": { "pins": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "Hana's tape · 12 March 1996", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["I'm in Room 0. The radio is on.", "It says: \"{name}. I can hear you.\"", "I used to think it was a ghost.", "Now I think it's the future."] },
+    { "type": "bg", "preset": "hidden_room", "signal": 0.95, "static": 0.8 },
+    { "type": "say", "who": "echo", "text": "Hana heard your name. Thirty years ago.", "tr": "Hana senin adını duydu. Otuz yıl önce." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Catch the Bus", "ms": 5000 }
+  ]
+}

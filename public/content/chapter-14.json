@@ -1,0 +1,153 @@
+{
+  "id": "14",
+  "season": 2,
+  "title": "Grab a Bite",
+  "theme": "Life in the World & Culture",
+  "cefr": "B1.2",
+  "next": "15",
+  "outcome_tags": ["L1", "L2", "L3", "R2", "R3", "S1", "S3", "S4", "W3", "W5", "P1", "V1", "G1"],
+  "grammar": ["present perfect (have you ever…? I've just…)", "countable / uncountable: some, any, much, many", "be able to", "need / needn't", "question tags with have"],
+  "vocab_key": ["continent", "Asia", "Europe", "Africa", "Pacific", "nationality", "cashier", "receipt", "trolley", "vegetarian", "gluten-free", "halal", "garlic", "grapes", "chopsticks", "croissant", "kebab", "sushi", "to grab a bite"],
+  "social": ["Do you want to grab a bite?", "I'm not into spicy food!"],
+  "steps": [
+    { "type": "cold_open", "shots": [
+      { "preset": "market", "vars": { "star": false }, "ms": 3200, "rain": 0, "signal": 0, "static": 0 },
+      { "preset": "supermarket", "ms": 3400 },
+      { "preset": "pier_sky", "vars": { "star": true }, "ms": 3600, "signal": 0.4, "static": 0.4 }
+    ] },
+    { "type": "bg", "preset": "black", "signal": 0, "static": 0 },
+    { "type": "title", "text": "SIGNAL", "sub": "Season 2 · Episode 6 · Grab a Bite", "ms": 3600 },
+
+    { "type": "bg", "preset": "supermarket" },
+    { "type": "name_entry", "skipIf": "name", "who": "staff", "text": "New here? Your name, please?", "tr": "Yeni misin? Adın?" },
+    { "type": "flag_pick", "skipIf": "country", "who": "staff", "text": "Where are you from?", "tr": "Nerelisin?", "say": "I'm from {country}.", "countries": [
+      { "flag": "/flags/tr.svg", "name": "Türkiye", "nat": "Turkish", "lang": "Turkish" },
+      { "flag": "/flags/gb.svg", "name": "the UK", "nat": "British", "lang": "English" },
+      { "flag": "/flags/us.svg", "name": "the USA", "nat": "American", "lang": "English" },
+      { "flag": "/flags/de.svg", "name": "Germany", "nat": "German", "lang": "German" },
+      { "flag": "/flags/es.svg", "name": "Spain", "nat": "Spanish", "lang": "Spanish" },
+      { "flag": "/flags/fr.svg", "name": "France", "nat": "French", "lang": "French" },
+      { "flag": "/flags/jp.svg", "name": "Japan", "nat": "Japanese", "lang": "Japanese" },
+      { "flag": "/flags/kr.svg", "name": "South Korea", "nat": "South Korean", "lang": "Korean" },
+      { "flag": "/flags/az.svg", "name": "Azerbaijan", "nat": "Azerbaijani", "lang": "Azerbaijani" },
+      { "flag": "/flags/kz.svg", "name": "Kazakhstan", "nat": "Kazakh", "lang": "Kazakh" },
+      { "flag": "/flags/it.svg", "name": "Italy", "nat": "Italian", "lang": "Italian" },
+      { "flag": "/flags/mx.svg", "name": "Mexico", "nat": "Mexican", "lang": "Spanish" }
+    ] },
+
+    { "type": "say", "who": "omar", "text": "Friday. Pier 7. Anya, Marco, Yuki!", "tr": "Cuma. İskele 7. Anya, Marco, Yuki!", "expr": "excited" },
+    { "type": "say", "who": "yasemin", "text": "They've just arrived. A world dinner tonight.", "tr": "Az önce geldiler. Bu gece dünya yemeği.", "expr": "smile" },
+    { "type": "say", "who": "mei", "text": "Have you ever cooked for ten people?", "tr": "Hiç on kişiye yemek yaptın mı?", "expr": "worried" },
+    { "type": "say", "who": "leo", "text": "Never. But we have a list.", "tr": "Hiç. Ama bir listemiz var.", "expr": "think" },
+    { "type": "say", "who": "omar", "text": "Anya is vegetarian. Marco can't eat gluten.", "tr": "Anya vejetaryen. Marco glüten yiyemez.", "expr": "think" },
+    { "type": "shop", "who": "omar", "title": "world dinner", "items": [
+      { "id": "rice", "icon": "🍚", "name": "rice", "q": "some" },
+      { "id": "grapes", "icon": "🍇", "name": "grapes", "q": "a bunch of" },
+      { "id": "garlic", "icon": "🧄", "name": "garlic", "q": "some" },
+      { "id": "eggs", "icon": "🥚", "name": "eggs", "q": "a dozen" },
+      { "id": "milk", "icon": "🥛", "name": "milk", "q": "a litre of" },
+      { "id": "tomatoes", "icon": "🍅", "name": "tomatoes", "q": "six" },
+      { "id": "bread", "icon": "🍞", "name": "gluten-free bread", "q": "a loaf of" },
+      { "id": "chicken", "icon": "🍗", "name": "halal chicken", "q": "a kilo of" },
+      { "id": "cheese", "icon": "🧀", "name": "cheese", "q": "some" },
+      { "id": "chopsticks", "icon": "🥢", "name": "chopsticks", "q": "ten pairs of" }
+    ], "rounds": [
+      { "text": "We need some rice for Yuki's sushi.", "target": "rice", "label": "some rice" },
+      { "text": "How many eggs? A dozen.", "target": "eggs", "label": "a dozen eggs" },
+      { "text": "Marco can't eat gluten. Bread?", "target": "bread", "label": "a loaf of gluten-free bread" },
+      { "text": "How much milk? A litre.", "target": "milk", "label": "a litre of milk" },
+      { "text": "Six tomatoes for the salad.", "target": "tomatoes", "label": "six tomatoes" },
+      { "text": "Halal chicken for the kebab.", "target": "chicken", "label": "a kilo of halal chicken" },
+      { "text": "Yuki needs chopsticks. Ten pairs.", "target": "chopsticks", "label": "ten pairs of chopsticks" }
+    ] },
+    { "type": "say", "who": "staff", "text": "Cashier. Here's your receipt. Enjoy!", "tr": "Kasa. İşte fişiniz. Afiyet olsun!", "expr": "smile" },
+
+    { "type": "bg", "preset": "market", "vars": { "star": false } },
+    { "type": "say", "who": "yasemin", "text": "Pier 7. The signals, in the flesh.", "tr": "İskele 7. Sinyaller, canlı kanlı.", "expr": "excited" },
+    { "type": "bg", "preset": "market", "signal": 0.4, "static": 0.3 },
+    { "type": "say", "who": "echo", "text": "…have you… ever… met… three friends…", "tr": "…hiç… üç arkadaşla… tanıştın mı…" },
+    { "type": "broken_message", "text": "Have you [ever] eaten sushi? I've [just] tried it. I [haven't] tried kebab yet.",
+      "options": { "ever": ["ever", "never", "yet"], "just": ["just", "ever", "yet"], "haven't": ["haven't", "didn't", "don't"] },
+      "hints": { "ever": "❓", "never": "🚫", "yet": "⏳", "just": "⚡", "haven't": "🚫✅", "didn't": "⏮️", "don't": "▶️" } },
+    { "type": "choice", "who": "echo", "text": "Have you ever been to Japan?", "tr": "Hiç Japonya'ya gittin mi?", "options": [
+      { "text": "No, I haven't. Not yet.", "tr": "Hayır, gitmedim. Henüz değil." },
+      { "text": "No, I didn't.", "tr": "", "ok": false, "reply": { "text": "…HAVE you… haven't…", "tr": "…HAVE you… haven't…" } },
+      { "text": "No, I haven't been yet never.", "tr": "", "ok": false, "reply": { "text": "…not yet… or never…", "tr": "…not yet… ya da never…" } }
+    ] },
+    { "type": "bg", "preset": "market", "signal": 0.1, "static": 0 },
+
+    { "type": "say", "who": "leo", "text": "Three friends, three continents. Match.", "tr": "Üç arkadaş, üç kıta. Eşleştir.", "expr": "smile" },
+    { "type": "match", "title": "Continents and food", "who": "leo", "pairs": [
+      { "a": "🇷🇺 Anya · Europe", "b": "borscht, a beetroot soup" },
+      { "a": "🇮🇹 Marco · Europe", "b": "risotto, rice from the north" },
+      { "a": "🇯🇵 Yuki · Asia", "b": "sushi with chopsticks" },
+      { "a": "🇪🇬 Omar · Africa", "b": "koshari, rice and lentils" },
+      { "a": "🇧🇷 Leo · South America", "b": "feijoada, beans and meat" },
+      { "a": "🇹🇷 Yasemin · Europe & Asia", "b": "menemen, eggs and tomatoes" }
+    ] },
+    { "type": "say", "who": "mei", "text": "The menu. Anya wrote it. Read it.", "tr": "Menü. Anya yazdı. Oku.", "expr": "smile" },
+    { "type": "note", "title": "WORLD DINNER · Pier 7 · menu",
+      "text": "Starter: menemen (vegetarian). Main: halal chicken kebab, or gluten-free risotto for Marco. Yuki has made sushi; she has never used a Turkish oven before! Dessert: grapes and croissants. We don't have much time, so we needn't make soup. Do you want to grab a bite?",
+      "question": { "who": "omar", "text": "Yuki has made soup, hasn't she?", "tr": "Yuki çorba yaptı, değil mi?", "expr": "wink", "options": [
+        { "text": "No, she hasn't. She's made sushi.", "tr": "Hayır. Sushi yaptı." },
+        { "text": "Yes, she has. Soup.", "tr": "", "ok": false, "reply": { "who": "leo", "text": "Read again. Sushi. No soup.", "tr": "Tekrar oku. Sushi. Çorba yok.", "expr": "think" } },
+        { "text": "She has made croissants.", "tr": "", "ok": false, "reply": { "who": "mei", "text": "Croissants are dessert. Sushi.", "tr": "Kruvasan tatlı. Sushi.", "expr": "think" } }
+      ] } },
+
+    { "type": "say", "who": "yasemin", "text": "Countable, or uncountable? Sort the food.", "tr": "Sayılabilir mi, sayılamaz mı? Yiyecekleri ayır.", "expr": "think" },
+    { "type": "evidence_board",
+      "groups": [{ "id": "c", "label": "countable · many / a few" }, { "id": "u", "label": "uncountable · much / a little" }],
+      "cards": [
+        { "text": "six tomatoes", "g": "c" }, { "text": "a dozen eggs", "g": "c" }, { "text": "ten pairs of chopsticks", "g": "c" }, { "text": "two croissants", "g": "c" },
+        { "text": "some rice", "g": "u" }, { "text": "a litre of milk", "g": "u" }, { "text": "a little garlic", "g": "u" }, { "text": "not much time", "g": "u" }
+      ],
+      "speed": [
+        { "text": "How ___ eggs do we need?", "opts": ["many", "much", "any"], "a": "many" },
+        { "text": "How ___ rice is there?", "opts": ["much", "many", "some"], "a": "much" },
+        { "text": "Is there ___ milk left?", "opts": ["any", "some", "many"], "a": "any" },
+        { "text": "I ___ just bought some grapes.", "opts": ["have", "has", "did"], "a": "have" },
+        { "text": "Yuki ___ never used an oven.", "opts": ["has", "have", "did"], "a": "has" },
+        { "text": "We ___ make soup. No time.", "opts": ["needn't", "need", "must"], "a": "needn't" }
+      ] },
+
+    { "type": "say", "who": "yasemin", "text": "Tags with have. Anya's turn.", "tr": "Have ile kuyruklar. Anya'nın sırası.", "expr": "think" },
+    { "type": "tags", "title": "Question tags · present perfect", "who": "echo", "items": [
+      { "text": "You've eaten sushi before, ___?", "opts": ["haven't you", "have you", "didn't you"], "a": "haven't you" },
+      { "text": "Yuki has made sushi, ___?", "opts": ["hasn't she", "has she", "doesn't she"], "a": "hasn't she" },
+      { "text": "We haven't bought garlic, ___?", "opts": ["have we", "haven't we", "did we"], "a": "have we" },
+      { "text": "Marco is able to cook, ___?", "opts": ["isn't he", "is he", "can't he"], "a": "isn't he" },
+      { "text": "There isn't any milk left, ___?", "opts": ["is there", "isn't there", "has there"], "a": "is there" }
+    ] },
+
+    { "type": "bg", "preset": "market", "signal": 0.2 },
+    { "type": "say", "who": "omar", "text": "The stage door. Say it. Dinner time!", "tr": "Sahne kapısı. Söyle. Yemek vakti!", "expr": "excited" },
+    { "type": "voice_lock", "phrase": "Do you want to grab a bite?", "tries": 3, "threshold": 0.6 },
+    { "type": "say", "who": "yasemin", "text": "Open! Ten of us. One table. Record.", "tr": "Açıldı! On kişiyiz. Bir masa. Kaydet.", "expr": "smile" },
+    { "type": "interview", "title": "Global Food Culture · project", "file": "foodculture", "questions": [
+      { "q": "Have you ever tried food from another continent?", "who": "leo", "a": "Yes. Sushi, from Asia. Last night!", "you": "And you? Have you ever tried it?" },
+      { "q": "What can't you eat?", "who": "mei", "a": "Spicy food. I'm not into it.", "you": "And you? What are you not into?" },
+      { "q": "What have you just bought?", "who": "omar", "a": "A kilo of halal chicken. Kebab!", "you": "And you? What have you just bought?" }
+    ] },
+    { "type": "say", "who": "omar", "text": "I'm not into spicy food. Just kidding!", "tr": "Acı sevmem. Şaka şaka!", "expr": "wink" },
+
+    { "type": "bg", "preset": "dorm", "rain": 0.2, "signal": 0, "static": 0 },
+    { "type": "say", "who": "yasemin", "text": "Captain's log. Day 6.", "tr": "Kaptan günlüğü. Altıncı gün.", "expr": "smile" },
+    { "type": "journal", "title": "Captain's log · Season 2 · Day 6", "hints": ["🌍", "🍣", "🛒"], "min": 2, "placeholder": "I have never … I've just … We bought some …",
+      "feedback": [
+        { "contains": ["have"], "who": "yasemin", "text": "Have. Present perfect. Delicious.", "tr": "Have. Present perfect. Lezzetli.", "expr": "excited" },
+        { "contains": ["some"], "who": "yasemin", "text": "Some. Good. Have you ever…?", "tr": "Some. Güzel. Hiç…?", "expr": "smile" },
+        { "contains": [], "who": "yasemin", "text": "Try: I have never… I've just…", "tr": "Dene: I have never… I've just…", "expr": "think" }
+      ] },
+
+    { "type": "bg", "preset": "pier_sky", "vars": { "star": true }, "signal": 0.3, "static": 0.3 },
+    { "type": "wait", "ms": 1500 },
+    { "type": "say", "who": "echo", "text": "{name}…", "tr": "" },
+    { "type": "note", "mode": "reveal", "title": "ECHO · to all four schools", "ms": 1200, "charMs": 40, "hold": 2600,
+      "lines": ["You have found each other.", "Four schools. One signal.", "The forests have not come back yet.", "Next: the planet, {name}."] },
+    { "type": "bg", "preset": "pier_sky", "vars": { "star": true }, "signal": 0.95, "static": 0.8 },
+    { "type": "say", "who": "echo", "text": "Dinner is over. The real work has begun.", "tr": "Yemek bitti. Asıl iş başladı." },
+    { "type": "sfx", "name": "thud" },
+    { "type": "fade", "on": true },
+    { "type": "end", "label": "Next episode", "text": "Save Our Planet", "ms": 5000 }
+  ]
+}

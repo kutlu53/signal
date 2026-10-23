@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Signal</title>
+  <meta name="theme-color" content="#0b1020">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="ui"></div>
+  <div id="hud">
+    <button id="btn-sub" title="Türkçe altyazı">TR</button>
+    <button id="btn-motion" title="Reduce motion">◐</button>
+    <a id="btn-arena" href="./arena.html" title="Arena: quick rounds">ARENA</a>
+  </div>
+  <div id="start">
+    <div class="wave"></div>
+    <div class="tap">tap to begin</div>
+    <div class="hint">🎧</div>
+    <div class="reset" id="btn-reset" hidden>new player ↺</div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
